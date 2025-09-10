@@ -7,7 +7,17 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Arial', sans-serif; background: #fdfdfd; color: #222; line-height: 1.6; }
-
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr; /* one image per row on small screens */
+    gap: 10px;
+    padding: 1rem;
+  }
+  .gallery img {
+    height: auto; /* keep original aspect ratio */
+  }
+}
     /* Header / Hero */
     header {
       background: url('images/hero.jpg') center/cover no-repeat;
