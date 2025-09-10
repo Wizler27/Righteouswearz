@@ -7,44 +7,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Arial', sans-serif; background: #fdfdfd; color: #222; line-height: 1.6; }
-/* Gallery container */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  padding: 2rem 1rem;
-}
 
-/* Gallery images */
-.gallery img {
-  width: 100%;        
-  height: auto;       
-  object-fit: cover;  
-  border-radius: 8px;
-  border: 3px solid #ffcc00;
-  opacity: 0;         
-  transform: scale(0.8);
-  transition: all 0.8s ease-out;
-  display: block;     
-}
-
-/* Animation class */
-.gallery img.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Mobile adjustments */
-@media (max-width: 480px) {
-  .gallery {
-    grid-template-columns: 1fr; 
-    gap: 10px;
-    padding: 1rem;
-  }
-  .gallery img {
-    border-width: 2px;  
-  }
-}
     /* Header / Hero */
     header {
       background: url('images/hero.jpg') center/cover no-repeat;
@@ -79,10 +42,38 @@
     .divider-blue { background-color: #0066ff; }
     .divider-red { background-color: #ff3333; }
 
-    /* Gallery */
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; padding: 2rem 1rem; }
-    .gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 3px solid #ffcc00; opacity: 0; transform: scale(0.8); transition: all 0.8s ease-out; }
-    .gallery img.visible { opacity: 1; transform: scale(1); }
+    /* ✅ Fixed Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      padding: 2rem 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;  /* keeps aspect ratio */
+      object-fit: cover;
+      border-radius: 8px;
+      border: 3px solid #ffcc00;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.8s ease-out;
+      display: block;
+    }
+    .gallery img.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr; /* one image per row on phones */
+        gap: 10px;
+        padding: 1rem;
+      }
+      .gallery img {
+        border-width: 2px; /* thinner borders on mobile */
+      }
+    }
 
     /* Shop */
     .shop-preview { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; padding: 2rem 1rem; }
@@ -98,7 +89,10 @@
     footer { background: #222; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
 
     /* Responsive */
-    @media (max-width: 768px) { header h1 { font-size: 2rem; } .item { width: 100%; max-width: 320px; } }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .item { width: 100%; max-width: 320px; }
+    }
   </style>
 </head>
 <body>
@@ -137,25 +131,21 @@
 
   <div class="divider divider-blue"></div>
 
-  <!-- Gallery -->
+  <!-- ✅ Updated Gallery -->
   <section class="gallery" id="gallery">
-<!-- Gallery -->
-<section class="gallery" id="gallery">
-  <img src="dickens.jpg" alt="">
-  <img src="dickenssaved.jpg" alt="">
-  <img src="erick.jpg" alt="">
-  <img src="flynn.jpg" alt="">
-  <img src="gym.jpg" alt="">
-  <img src="jacob.jpg" alt="">
-  <img src="joey.jpg" alt="">
-  <img src="logo.png" alt="">
-  <img src="mary.jpg" alt="">
-  <img src="sonny.jpg" alt="">
-  <img src="sonnyback.jpg" alt="">
-  <img src="willie.jpg" alt="">
-  <img src="wiz.jpg" alt="">
-</section>
-</div>
+    <img src="dickens.jpg" alt="">
+    <img src="dickenssaved.jpg" alt="">
+    <img src="erick.jpg" alt="">
+    <img src="flynn.jpg" alt="">
+    <img src="gym.jpg" alt="">
+    <img src="jacob.jpg" alt="">
+    <img src="joey.jpg" alt="">
+    <img src="logo.png" alt="">
+    <img src="mary.jpg" alt="">
+    <img src="sonny.jpg" alt="">
+    <img src="sonnyback.jpg" alt="">
+    <img src="willie.jpg" alt="">
+    <img src="wiz.jpg" alt="">
   </section>
 
   <div class="divider divider-red"></div>
