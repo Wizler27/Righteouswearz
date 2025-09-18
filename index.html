@@ -48,4 +48,240 @@
     /* Section Background Colors */
     #about { background: #ffffff; }
     #mission { background: #FFD700; color: #222; } /* bright yellow */
-    #
+    #gallery { background: #f7f7f7; }
+    #shop { background: #e6f0ff; }
+
+    /* Divider Styles */
+    .divider { height: 5px; width: 100%; opacity: 0; transform: translateX(-50px); transition: all 0.8s ease-out; }
+    .divider.visible { opacity: 1; transform: translateX(0); }
+    .divider-yellow { background-color: #ffcc00; }
+    .divider-blue { background-color: #0066ff; }
+    .divider-red { background-color: #ff3333; }
+
+    /* Slideshow */
+    .slideshow-container {
+      max-width: 800px;
+      position: relative;
+      margin: auto;
+    }
+
+    .slide { display: none; }
+    .slide img {
+      width: 100%;
+      border-radius: 10px;
+      border: 3px solid #ffcc00;
+    }
+
+    /* Arrows */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background: rgba(0,0,0,0.5);
+      z-index: 5;
+    }
+    .next { right: 0; border-radius: 3px 0 0 3px; }
+
+    /* Dots */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 3px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background 0.6s ease;
+    }
+    .active, .dot:hover { background-color: #717171; }
+
+    /* Fade effect */
+    .fade { animation: fadeEffect 1.5s; }
+    @keyframes fadeEffect {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    /* Shop */
+    .shop-preview { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; padding: 2rem 1rem; }
+    .item { background: white; border: 2px solid #ffcc00; border-radius: 8px; padding: 1rem; width: 220px; text-align: center; transition: transform 0.2s; }
+    .item:hover { transform: scale(1.05); border-color: #0066ff; }
+    .item img { width: 100%; border-radius: 6px; }
+
+    .shop-button { text-align: center; margin: 2rem auto; }
+    .shop-button a { background: #0066ff; color: white; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: bold; transition: background 0.3s; }
+    .shop-button a:hover { background: #ff3333; }
+
+    /* Footer */
+    footer { background: #222; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .item { width: 100%; max-width: 320px; }
+      header .logo img { max-width: 120px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Righteous Wearz Logo">
+    </div>
+    <h1>Righteous Wearz</h1>
+    <p>Prophetic Covering for the Righteous Remnant</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#mission">Mission</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#shop">Shop</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p>Righteous Wearz is a prophetic covering for the righteous remnant — a brand that recognizes God’s people above all others. When you wear Righteous Wearz, you declare that you are a person of God, righteous, not wicked, and one who seeks to thrive in love, peace, and godliness.</p>
+  </section>
+
+  <div class="divider divider-yellow"></div>
+
+  <!-- Mission & Vision -->
+  <section class="section" id="mission">
+    <h2>Mission & Vision</h2>
+    <p>Our mission is simple: <strong>The brand speaks for itself</strong>. We are righteous people who desire light to shine in the world. With the profit we make, we aim to do what the Lord commanded: feed the hungry, clothe the naked, love your neighbor, and help the sick.</p>
+    <p>Our vision is to cover the earth with a prophetic covering that will recognize people who are morally correct and living in godliness.</p>
+  </section>
+
+  <div class="divider divider-blue"></div>
+
+  <!-- Gallery Slideshow -->
+  <section id="gallery" class="slideshow-container">
+
+    <div class="slide fade"><img src="dickens.jpg" alt=""></div>
+    <div class="slide fade"><img src="dickenssaved.jpg" alt=""></div>
+    <div class="slide fade"><img src="erick.jpg" alt=""></div>
+    <div class="slide fade"><img src="flynn.jpg" alt=""></div>
+    <div class="slide fade"><img src="gym.jpg" alt=""></div>
+    <div class="slide fade"><img src="jacob.jpg" alt=""></div>
+    <div class="slide fade"><img src="joey.jpg" alt=""></div>
+    <div class="slide fade"><img src="logo.png" alt=""></div>
+    <div class="slide fade"><img src="mary.jpg" alt=""></div>
+    <div class="slide fade"><img src="sonny.jpg" alt=""></div>
+    <div class="slide fade"><img src="sonnyback.jpg" alt=""></div>
+    <div class="slide fade"><img src="willie.jpg" alt=""></div>
+    <div class="slide fade"><img src="wiz.jpg" alt=""></div>
+
+    <!-- Navigation Arrows -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </section>
+  <br>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+    <span class="dot" onclick="currentSlide(4)"></span> 
+    <span class="dot" onclick="currentSlide(5)"></span> 
+    <span class="dot" onclick="currentSlide(6)"></span> 
+    <span class="dot" onclick="currentSlide(7)"></span> 
+    <span class="dot" onclick="currentSlide(8)"></span> 
+    <span class="dot" onclick="currentSlide(9)"></span> 
+    <span class="dot" onclick="currentSlide(10)"></span> 
+    <span class="dot" onclick="currentSlide(11)"></span> 
+    <span class="dot" onclick="currentSlide(12)"></span> 
+    <span class="dot" onclick="currentSlide(13)"></span> 
+  </div>
+
+  <div class="divider divider-red"></div>
+
+  <!-- Shop -->
+  <section class="shop-preview" id="shop">
+    <div class="item">
+      <img src="images/shirt1.jpg" alt="Righteous Wearz Faith Tee white t-shirt">
+      <h3>Faith Tee</h3>
+      <p>$25</p>
+    </div>
+    <div class="item">
+      <img src="images/hoodie1.jpg" alt="Righteous Wearz Peace Hoodie in blue">
+      <h3>Peace Hoodie</h3>
+      <p>$45</p>
+    </div>
+    <div class="item">
+      <img src="images/cap1.jpg" alt="Righteous Wearz Cap black with logo">
+      <h3>Righteous Cap</h3>
+      <p>$20</p>
+    </div>
+  </section>
+
+  <div class="shop-button">
+    <a href="#">Shop Now</a>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>Contact us: righteouswearz@email.com</p>
+    <p>&copy; 2025 Righteous Wearz</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Divider animations
+    const dividers = document.querySelectorAll('.divider');
+    function checkDividers() {
+      const triggerBottom = window.innerHeight * 0.9;
+      dividers.forEach(div => {
+        if(div.getBoundingClientRect().top < triggerBottom) {
+          div.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', checkDividers);
+    window.addEventListener('load', checkDividers);
+
+    // Slideshow
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) { showSlides(slideIndex += n); }
+    function currentSlide(n) { showSlides(slideIndex = n); }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slide");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+
+    // Auto-play slideshow
+    setInterval(() => {
+      plusSlides(1);
+    }, 5000);
+  </script>
+
+</body>
+</html>
