@@ -7,18 +7,15 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Arial', sans-serif; background: #fdfdfd; color: #222; }
-    body { font-family: 'Arial', sans-serif; background: #fdfdfd; color: #222; line-height: 1.6; }
 
     /* Header */
-    /* Header / Hero */
     header {
       background: #87CEEB; /* sky blue */
       color: white;
       text-align: center;
       padding: 3rem 1rem;
+      padding: 2rem 1rem; /* slightly smaller padding */
       position: relative;
-      background: url('images/hero.jpg') center/cover no-repeat;
-      color: white; text-align: center; padding: 4rem 1rem; position: relative;
     }
 
     /* Logo */
@@ -32,124 +29,33 @@
     header .logo img {
       max-width: 150px; /* adjust size */
       width: 100%;
+      max-width: 80px; /* much smaller logo */
+      width: auto;
       height: auto;
-    header::after {
-      content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);
-    body { font-family: 'Arial', sans-serif; background: #fdfdfd; color: #222; line-height: 
+      display: block;
+      margin: 0 auto 1rem auto; /* centers logo and adds spacing below */
     }
 
     header h1, header p { position: relative; z-index: 1; }
     header h1 { font-size: 2.5rem; font-weight: bold; letter-spacing: 2px; }
     header p { font-size: 1.2rem; margin-top: 0.5rem; }
-    header h1 { font-size: 2.8rem; font-weight: bold; letter-spacing: 2px; }
-header {
-  background: #87CEEB; /* sky blue */
-  color: white;
-  text-align: center;
-  padding: 4rem 1rem;
-  position: relative;
-}
 
-header::after {
-  content: none; /* removes the overlay */
-}
-
-    /* Navigation */
-    nav { background-color: #222; padding: 0.5rem; text-align: center; }
-@@ -47,8 +43,7 @@
+@@ -47,7 +41,7 @@
 
     /* Section Background Colors */
     #about { background: #ffffff; }
     #mission { background: #FFD700; color: #222; } /* bright yellow */
-    #
-    #mission { background: #fff9e6; }
+    #mission { background: #FFD700; color: #222; }
     #gallery { background: #f7f7f7; }
     #shop { background: #e6f0ff; }
 
-@@ -59,56 +54,37 @@
-    .divider-blue { background-color: #0066ff; }
-    .divider-red { background-color: #ff3333; }
+@@ -121,167 +115,4 @@
+    .shop-button a:hover { background: #ff3333; }
 
-    /* Slideshow */
-    .slideshow-container {
-      max-width: 800px;
-      position: relative;
-      margin: auto;
-    /* ✅ Fixed Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-      padding: 2rem 1rem;
-    }
+    /* Footer */
+    footer { background: #222; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
 
-    .slide { display: none; }
-    .slide img {
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      height: auto;  /* keeps aspect ratio */
-      object-fit: cover;
-      border-radius: 8px;
-      border: 3px solid #ffcc00;
-      opacity: 0;
-      transform: scale(0.8);
-      transition: all 0.8s ease-out;
-      display: block;
-    }
-
-    /* Arrows */
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 16px;
-      margin-top: -22px;
-      color: white;
-      font-weight: bold;
-      font-size: 24px;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      background: rgba(0,0,0,0.5);
-      z-index: 5;
-    .gallery img.visible {
-      opacity: 1;
-      transform: scale(1);
-    }
-    .next { right: 0; border-radius: 3px 0 0 3px; }
-
-    /* Dots */
-    .dot {
-      cursor: pointer;
-      height: 15px;
-      width: 15px;
-      margin: 0 3px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background 0.6s ease;
-    }
-    .active, .dot:hover { background-color: #717171; }
-
-    /* Fade effect */
-    .fade { animation: fadeEffect 1.5s; }
-    @keyframes fadeEffect {
-      from {opacity: .4} 
-      to {opacity: 1}
-    @media (max-width: 480px) {
-      .gallery {
-        grid-template-columns: 1fr; /* one image per row on phones */
-        gap: 10px;
-        padding: 1rem;
-      }
-      .gallery img {
-        border-width: 2px; /* thinner borders on mobile */
-      }
-    }
-
-    /* Shop */
-@@ -128,17 +104,14 @@
+    /* Responsive */
     @media (max-width: 768px) {
       header h1 { font-size: 2rem; }
       .item { width: 100%; max-width: 320px; }
@@ -164,11 +70,34 @@ header::after {
     <div class="logo">
       <img src="logo.png" alt="Righteous Wearz Logo">
     </div>
-    <img src="images/hero.jpg" alt="Hero banner of Righteous Wearz clothing brand" style="display:none;">
     <h1>Righteous Wearz</h1>
     <p>Prophetic Covering for the Righteous Remnant</p>
   </header>
-@@ -170,44 +143,22 @@
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#mission">Mission</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#shop">Shop</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p>Righteous Wearz is a prophetic covering for the righteous remnant — a brand that recognizes God’s people above all others. When you wear Righteous Wearz, you declare that you are a person of God, righteous, not wicked, and one who seeks to thrive in love, peace, and godliness.</p>
+  </section>
+
+  <div class="divider divider-yellow"></div>
+
+  <!-- Mission & Vision -->
+  <section class="section" id="mission">
+    <h2>Mission & Vision</h2>
+    <p>Our mission is simple: <strong>The brand speaks for itself</strong>. We are righteous people who desire light to shine in the world. With the profit we make, we aim to do what the Lord commanded: feed the hungry, clothe the naked, love your neighbor, and help the sick.</p>
+    <p>Our vision is to cover the earth with a prophetic covering that will recognize people who are morally correct and living in godliness.</p>
+  </section>
 
   <div class="divider divider-blue"></div>
 
@@ -193,21 +122,6 @@ header::after {
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-  <!-- ✅ Updated Gallery -->
-  <section class="gallery" id="gallery">
-    <img src="dickens.jpg" alt="">
-    <img src="dickenssaved.jpg" alt="">
-    <img src="erick.jpg" alt="">
-    <img src="flynn.jpg" alt="">
-    <img src="gym.jpg" alt="">
-    <img src="jacob.jpg" alt="">
-    <img src="joey.jpg" alt="">
-    <img src="logo.png" alt="">
-    <img src="mary.jpg" alt="">
-    <img src="sonny.jpg" alt="">
-    <img src="sonnyback.jpg" alt="">
-    <img src="willie.jpg" alt="">
-    <img src="wiz.jpg" alt="">
   </section>
   <br>
   <div style="text-align:center">
@@ -228,16 +142,47 @@ header::after {
 
   <div class="divider divider-red"></div>
 
-@@ -240,7 +191,7 @@
+  <!-- Shop -->
+  <section class="shop-preview" id="shop">
+    <div class="item">
+      <img src="images/shirt1.jpg" alt="Righteous Wearz Faith Tee white t-shirt">
+      <h3>Faith Tee</h3>
+      <p>$25</p>
+    </div>
+    <div class="item">
+      <img src="images/hoodie1.jpg" alt="Righteous Wearz Peace Hoodie in blue">
+      <h3>Peace Hoodie</h3>
+      <p>$45</p>
+    </div>
+    <div class="item">
+      <img src="images/cap1.jpg" alt="Righteous Wearz Cap black with logo">
+      <h3>Righteous Cap</h3>
+      <p>$20</p>
+    </div>
+  </section>
+
+  <div class="shop-button">
+    <a href="#">Shop Now</a>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>Contact us: righteouswearz@email.com</p>
     <p>&copy; 2025 Righteous Wearz</p>
   </footer>
 
   <!-- Scripts -->
-  <!-- Scripts for animations -->
   <script>
     // Divider animations
     const dividers = document.querySelectorAll('.divider');
-@@ -255,33 +206,18 @@
+    function checkDividers() {
+      const triggerBottom = window.innerHeight * 0.9;
+      dividers.forEach(div => {
+        if(div.getBoundingClientRect().top < triggerBottom) {
+          div.classList.add('visible');
+        }
+      });
+    }
     window.addEventListener('scroll', checkDividers);
     window.addEventListener('load', checkDividers);
 
@@ -262,23 +207,14 @@ header::after {
       }
       slides[slideIndex-1].style.display = "block";  
       dots[slideIndex-1].className += " active";
-    // Gallery animations
-    const galleryImages = document.querySelectorAll('.gallery img');
-    function checkGallery() {
-      const triggerBottom = window.innerHeight * 0.9;
-      galleryImages.forEach(img => {
-        if(img.getBoundingClientRect().top < triggerBottom) {
-          img.classList.add('visible');
-        }
-      });
     }
 
     // Auto-play slideshow
     setInterval(() => {
       plusSlides(1);
     }, 5000);
-    window.addEventListener('scroll', checkGallery);
-    window.addEventListener('load', checkGallery);
   </script>
 
 </body>
+</html>
+    footer { background: #222; color: white; text-align: center; padding: 1rem; margin-
