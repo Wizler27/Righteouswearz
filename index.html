@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Righteous Wearz</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -10,66 +10,212 @@
 
     /* Header */
     header {
-      background: #87CEEB; /* sky blue */
+      background: #87CEEB; /* Sky blue */
       color: white;
       text-align: center;
-      padding: 3rem 1rem;
-      padding: 2rem 1rem; /* slightly smaller padding */
-      position: relative;
-    }
-
-    /* Logo */
-    header .logo {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      margin-bottom: 1rem;
+      padding: 2rem 1rem;
     }
 
     header .logo img {
-      max-width: 150px; /* adjust size */
-      width: 100%;
-      max-width: 80px; /* much smaller logo */
-      width: auto;
+      max-width: 80px;
       height: auto;
-      display: block;
-      margin: 0 auto 1rem auto; /* centers logo and adds spacing below */
+      margin-bottom: 0.8rem;
     }
 
-    header h1, header p { position: relative; z-index: 1; }
-    header h1 { font-size: 2.5rem; font-weight: bold; letter-spacing: 2px; }
-    header p { font-size: 1.2rem; margin-top: 0.5rem; }
+    header h1 {
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+    }
 
-@@ -47,7 +41,7 @@
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.4rem;
+    }
 
-    /* Section Background Colors */
-    #about { background: #ffffff; }
-    #mission { background: #FFD700; color: #222; } /* bright yellow */
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #222;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1rem;
+      display: block;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #555;
+    }
+
+    /* Sections */
+    .section {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Backgrounds */
+    #about { background: #fff; }
     #mission { background: #FFD700; color: #222; }
-    #gallery { background: #f7f7f7; }
     #shop { background: #e6f0ff; }
 
-@@ -121,167 +115,4 @@
-    .shop-button a:hover { background: #ff3333; }
+    /* Shop */
+    .shop-preview {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem 1rem;
+    }
+
+    .item {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 250px;
+      padding: 1rem;
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .item h3 {
+      margin-top: 0.8rem;
+      font-size: 1.2rem;
+    }
+
+    .shop-button {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .shop-button a {
+      background: red;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .shop-button a:hover {
+      background: #ff3333;
+    }
+
+    /* Slideshow at bottom */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+      background: #f7f7f7;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 10px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0,0,0,0.5);
+      transition: 0.3s;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .dot-container {
+      text-align: center;
+      padding: 1rem 0;
+      background: #f7f7f7;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #333;
+    }
 
     /* Footer */
-    footer { background: #222; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1.2rem;
+    }
 
-    /* Responsive */
+    /* Responsive adjustments */
     @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      .item { width: 100%; max-width: 320px; }
-      header .logo img { max-width: 120px; }
+      header h1 { font-size: 1.8rem; }
+      header p { font-size: 1rem; }
+      .item { width: 90%; max-width: 320px; }
+
+      /* Smaller slideshow for mobile */
+      .slide img { max-height: 280px; }
+      .prev, .next { font-size: 14px; padding: 6px; }
+    }
+
+    @media (max-width: 480px) {
+      .slide img { max-height: 240px; }
+      .prev, .next { font-size: 12px; padding: 4px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
+  <!-- Header -->
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Righteous Wearz Logo">
-    </div>
+    <div class="logo"><img src="logo.png" alt="Righteous Wearz Logo"></div>
     <h1>Righteous Wearz</h1>
     <p>Prophetic Covering for the Righteous Remnant</p>
   </header>
@@ -79,8 +225,8 @@
     <a href="#">Home</a>
     <a href="#about">About</a>
     <a href="#mission">Mission</a>
-    <a href="#gallery">Gallery</a>
     <a href="#shop">Shop</a>
+    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -90,72 +236,27 @@
     <p>Righteous Wearz is a prophetic covering for the righteous remnant — a brand that recognizes God’s people above all others. When you wear Righteous Wearz, you declare that you are a person of God, righteous, not wicked, and one who seeks to thrive in love, peace, and godliness.</p>
   </section>
 
-  <div class="divider divider-yellow"></div>
-
-  <!-- Mission & Vision -->
+  <!-- Mission -->
   <section class="section" id="mission">
     <h2>Mission & Vision</h2>
     <p>Our mission is simple: <strong>The brand speaks for itself</strong>. We are righteous people who desire light to shine in the world. With the profit we make, we aim to do what the Lord commanded: feed the hungry, clothe the naked, love your neighbor, and help the sick.</p>
     <p>Our vision is to cover the earth with a prophetic covering that will recognize people who are morally correct and living in godliness.</p>
   </section>
 
-  <div class="divider divider-blue"></div>
-
-  <!-- Gallery Slideshow -->
-  <section id="gallery" class="slideshow-container">
-
-    <div class="slide fade"><img src="dickens.jpg" alt=""></div>
-    <div class="slide fade"><img src="dickenssaved.jpg" alt=""></div>
-    <div class="slide fade"><img src="erick.jpg" alt=""></div>
-    <div class="slide fade"><img src="flynn.jpg" alt=""></div>
-    <div class="slide fade"><img src="gym.jpg" alt=""></div>
-    <div class="slide fade"><img src="jacob.jpg" alt=""></div>
-    <div class="slide fade"><img src="joey.jpg" alt=""></div>
-    <div class="slide fade"><img src="logo.png" alt=""></div>
-    <div class="slide fade"><img src="mary.jpg" alt=""></div>
-    <div class="slide fade"><img src="sonny.jpg" alt=""></div>
-    <div class="slide fade"><img src="sonnyback.jpg" alt=""></div>
-    <div class="slide fade"><img src="willie.jpg" alt=""></div>
-    <div class="slide fade"><img src="wiz.jpg" alt=""></div>
-
-    <!-- Navigation Arrows -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-  </section>
-  <br>
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span> 
-    <span class="dot" onclick="currentSlide(2)"></span> 
-    <span class="dot" onclick="currentSlide(3)"></span> 
-    <span class="dot" onclick="currentSlide(4)"></span> 
-    <span class="dot" onclick="currentSlide(5)"></span> 
-    <span class="dot" onclick="currentSlide(6)"></span> 
-    <span class="dot" onclick="currentSlide(7)"></span> 
-    <span class="dot" onclick="currentSlide(8)"></span> 
-    <span class="dot" onclick="currentSlide(9)"></span> 
-    <span class="dot" onclick="currentSlide(10)"></span> 
-    <span class="dot" onclick="currentSlide(11)"></span> 
-    <span class="dot" onclick="currentSlide(12)"></span> 
-    <span class="dot" onclick="currentSlide(13)"></span> 
-  </div>
-
-  <div class="divider divider-red"></div>
-
   <!-- Shop -->
   <section class="shop-preview" id="shop">
     <div class="item">
-      <img src="images/shirt1.jpg" alt="Righteous Wearz Faith Tee white t-shirt">
+      <img src="images/shirt1.jpg" alt="Faith Tee">
       <h3>Faith Tee</h3>
       <p>$25</p>
     </div>
     <div class="item">
-      <img src="images/hoodie1.jpg" alt="Righteous Wearz Peace Hoodie in blue">
+      <img src="images/hoodie1.jpg" alt="Peace Hoodie">
       <h3>Peace Hoodie</h3>
       <p>$45</p>
     </div>
     <div class="item">
-      <img src="images/cap1.jpg" alt="Righteous Wearz Cap black with logo">
+      <img src="images/cap1.jpg" alt="Righteous Cap">
       <h3>Righteous Cap</h3>
       <p>$20</p>
     </div>
@@ -165,56 +266,63 @@
     <a href="#">Shop Now</a>
   </div>
 
+  <!-- Gallery Slideshow (Bottom of Page) -->
+  <section class="slideshow-container" id="gallery">
+    <div class="slide fade"><img src="dickens.jpg" alt=""></div>
+    <div class="slide fade"><img src="erick.jpg" alt=""></div>
+    <div class="slide fade"><img src="flynn.jpg" alt=""></div>
+    <div class="slide fade"><img src="wiz.jpg" alt=""></div>
+    <div class="slide fade"><img src="mary.jpg" alt=""></div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </section>
+
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+  </div>
+
   <!-- Footer -->
   <footer id="contact">
     <p>Contact us: righteouswearz@email.com</p>
     <p>&copy; 2025 Righteous Wearz</p>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // Divider animations
-    const dividers = document.querySelectorAll('.divider');
-    function checkDividers() {
-      const triggerBottom = window.innerHeight * 0.9;
-      dividers.forEach(div => {
-        if(div.getBoundingClientRect().top < triggerBottom) {
-          div.classList.add('visible');
-        }
-      });
-    }
-    window.addEventListener('scroll', checkDividers);
-    window.addEventListener('load', checkDividers);
-
     // Slideshow
-    let slideIndex = 1;
-    showSlides(slideIndex);
+    let slideIndex = 0;
+    showSlides();
 
-    function plusSlides(n) { showSlides(slideIndex += n); }
-    function currentSlide(n) { showSlides(slideIndex = n); }
+    function plusSlides(n) {
+      slideIndex += n - 1;
+      showSlides();
+    }
 
-    function showSlides(n) {
-      let i;
+    function currentSlide(n) {
+      slideIndex = n - 1;
+      showSlides();
+    }
+
+    function showSlides() {
       let slides = document.getElementsByClassName("slide");
       let dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
       }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
       }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].classList.add("active");
+      setTimeout(showSlides, 4000);
     }
-
-    // Auto-play slideshow
-    setInterval(() => {
-      plusSlides(1);
-    }, 5000);
   </script>
 
 </body>
 </html>
-    footer { background: #222; color: white; text-align: center; padding: 1rem; margin-
