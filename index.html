@@ -1,220 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Righteous Wearz</title>
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Arial', sans-serif; background:#fdfdfd; color:#222; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Righteous Wearz</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Arial', sans-serif; background:#fdfdfd; color:#222; }
 
-    /* Header */
-    header {
-      background:#87CEEB;
-      color:white;
-      text-align:center;
-      padding:2rem 1rem;
-    }
-    header .logo img {
-      max-width:80px;
-      display:block;
-      margin:0 auto 1rem auto;
-    }
-    header h1 { font-size:2rem; font-weight:bold; letter-spacing:2px; }
-    header p { font-size:1.2rem; margin-top:0.5rem; }
+/* Header */
+header { background:#87CEEB; color:white; text-align:center; padding:2rem 1rem; }
+header .logo img { max-width:80px; display:block; margin:0 auto 1rem auto; }
+header h1 { font-size:2rem; font-weight:bold; letter-spacing:2px; }
+header p { font-size:1.2rem; margin-top:0.5rem; }
 
-    /* Navigation */
-    nav { display:flex; justify-content:center; background:#222; flex-wrap:wrap; }
-    nav a { color:white; padding:0.8rem 1rem; text-decoration:none; font-weight:bold; }
-    nav a:hover { background:#444; }
+/* Navigation */
+nav { display:flex; justify-content:center; background:#222; flex-wrap:wrap; }
+nav a { color:white; padding:0.8rem 1rem; text-decoration:none; font-weight:bold; }
+nav a:hover { background:#444; }
 
-    /* Sections */
-    section { padding:2rem 1rem; }
-    #about { background:#ffffff; }
-    #mission { background:#FFD700; color:#222; }
-    #shop { background:#f7f7f7; }
-    #gallery { background:#e6f0ff; }
+/* Sections */
+section { padding:2rem 1rem; }
+#about { background:#ffffff; }
+#mission { background:#FFD700; color:#222; }
+#shop { background:#f7f7f7; }
+#gallery { background:#e6f0ff; }
+section h2 { text-align:center; margin-bottom:1rem; }
 
-    section h2 { text-align:center; margin-bottom:1rem; }
+/* Grid Shop */
+.grid-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; padding:1rem; }
+.product-card { background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); padding:1rem; text-align:center; }
+.product-card img { width:100%; max-height:250px; object-fit:cover; border-radius:6px; }
+.product-card h3 { margin:0.5rem 0; }
+.product-card p { margin:0.25rem 0; font-size:0.95rem; }
+.variant-table { width:100%; margin-top:0.5rem; border-collapse:collapse; font-size:0.85rem; }
+.variant-table th, .variant-table td { border:1px solid #ddd; padding:4px; }
+.variant-table th { background:#f0f0f0; }
+.buy-button { margin-top:0.5rem; display:inline-block; background:red; color:white; padding:0.5rem 1rem; border-radius:4px; text-decoration:none; transition:0.3s; }
+.buy-button:hover { background:#ff3333; }
 
-    /* Grid Shop */
-    .grid-container {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-      gap:1rem;
-      padding:1rem;
-    }
-    .product-card {
-      background:white;
-      border-radius:8px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.1);
-      padding:1rem;
-      text-align:center;
-    }
-    .product-card img { width:100%; max-height:250px; object-fit:cover; border-radius:6px; }
-    .product-card h3 { margin:0.5rem 0; }
-    .product-card p { margin:0.25rem 0; font-size:0.95rem; }
-    .variant-table { width:100%; margin-top:0.5rem; border-collapse:collapse; font-size:0.85rem; }
-    .variant-table th, .variant-table td { border:1px solid #ddd; padding:4px; }
-    .variant-table th { background:#f0f0f0; }
-    .buy-button {
-      margin-top:0.5rem;
-      display:inline-block;
-      background:red;
-      color:white;
-      padding:0.5rem 1rem;
-      border-radius:4px;
-      text-decoration:none;
-      transition:0.3s;
-    }
-    .buy-button:hover { background:#ff3333; }
+/* Slideshow */
+.slideshow-container { position:relative; max-width:100%; margin:auto; overflow:hidden; }
+.slide { display:none; }
+.slide img { width:100%; height:auto; }
+.prev, .next { cursor:pointer; position:absolute; top:50%; padding:1rem; margin-top:-22px; color:white; font-weight:bold; font-size:2rem; transition:0.3s; border-radius:0 3px 3px 0; user-select:none; }
+.next { right:0; border-radius:3px 0 0 3px; }
+.prev:hover, .next:hover { background-color:rgba(0,0,0,0.5); }
+.dot { cursor:pointer; height:15px; width:15px; margin:0 2px; background-color:#bbb; border-radius:50%; display:inline-block; transition:background-color 0.3s; }
+.active, .dot:hover { background-color:#717171; }
 
-    /* Slideshow */
-    .slideshow-container { position:relative; max-width:100%; margin:auto; overflow:hidden; }
-    .slide { display:none; }
-    .slide img { width:100%; height:auto; }
-    .prev, .next {
-      cursor:pointer;
-      position:absolute;
-      top:50%;
-      padding:1rem;
-      margin-top:-22px;
-      color:white;
-      font-weight:bold;
-      font-size:2rem;
-      transition:0.3s;
-      border-radius:0 3px 3px 0;
-      user-select:none;
-    }
-    .next { right:0; border-radius:3px 0 0 3px; }
-    .prev:hover, .next:hover { background-color:rgba(0,0,0,0.5); }
-    .dot { cursor:pointer; height:15px; width:15px; margin:0 2px; background-color:#bbb; border-radius:50%; display:inline-block; transition:background-color 0.3s; }
-    .active, .dot:hover { background-color:#717171; }
+/* Footer */
+footer { background:#222; color:white; text-align:center; padding:1rem; margin-top:2rem; }
 
-    /* Footer */
-    footer { background:#222; color:white; text-align:center; padding:1rem; margin-top:2rem; }
-
-    /* Responsive */
-    @media(max-width:768px) {
-      header h1 { font-size:1.5rem; }
-      header .logo img { max-width:60px; }
-    }
-  </style>
+/* Responsive */
+@media(max-width:768px) { header h1 { font-size:1.5rem; } header .logo img { max-width:60px; } }
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <img src="images/logo.png" alt="Righteous Wearz Logo">
-    </div>
-    <h1>Righteous Wearz</h1>
-    <p>Prophetic Covering for the Righteous Remnant</p>
-  </header>
+<header>
+  <div class="logo"><img src="images/logo.png" alt="Righteous Wearz Logo"></div>
+  <h1>Righteous Wearz</h1>
+  <p>Prophetic Covering for the Righteous Remnant</p>
+</header>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#mission">Mission</a>
-    <a href="#shop">Shop</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#mission">Mission</a>
+  <a href="#shop">Shop</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <!-- About -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Righteous Wearz is a prophetic covering for the righteous remnant — a brand that recognizes God’s people above all others. When you wear Righteous Wearz, you declare that you are a person of God, righteous, not wicked, and one who seeks to thrive in love, peace, and godliness.</p>
-  </section>
+<section id="about">
+  <h2>About Us</h2>
+  <p>Righteous Wearz is a prophetic covering for the righteous remnant — a brand that recognizes God’s people above all others. When you wear Righteous Wearz, you declare that you are a person of God, righteous, not wicked, and one who seeks to thrive in love, peace, and godliness.</p>
+</section>
 
-  <!-- Mission -->
-  <section id="mission">
-    <h2>Mission & Vision</h2>
-    <p>Our mission is simple: <strong>The brand speaks for itself</strong>. We aim to do what the Lord commanded: feed the hungry, clothe the naked, love your neighbor, and help the sick.</p>
-    <p>Our vision is to cover the earth with a prophetic covering that recognizes people who are morally correct and living in godliness.</p>
-  </section>
+<section id="mission">
+  <h2>Mission & Vision</h2>
+  <p>Our mission is simple: <strong>The brand speaks for itself</strong>. We aim to do what the Lord commanded: feed the hungry, clothe the naked, love your neighbor, and help the sick.</p>
+  <p>Our vision is to cover the earth with a prophetic covering that recognizes people who are morally correct and living in godliness.</p>
+</section>
 
-  <!-- Shop -->
-  <section id="shop">
-    <h2>Shop Our Collection</h2>
-    <div id="product-grid" class="grid-container"></div>
-  </section>
+<section id="shop">
+  <h2>Shop Our Collection</h2>
+  <div id="product-grid" class="grid-container"></div>
+</section>
 
-  <!-- Slideshow Gallery -->
-  <section id="gallery" class="slideshow-container">
-    <div class="slide fade"><img src="images/saved.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/saved2.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/rwearzwhite.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/rwearzred.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/rwearzblue.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/rwearzblack.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/logoorange.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/logoblue.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/logoblack.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/hoodie.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/crewnecky.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/crewneckred.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/crewneckpurp.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/crewneckpink.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/crewneckblack.jpg" alt=""></div>
-    <div class="slide fade"><img src="images/beanie.jpg" alt=""></div>
+<section id="gallery" class="slideshow-container">
+  <div class="slide fade"><img src="images/saved.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/saved2.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/rwearzwhite.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/rwearzred.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/rwearzblue.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/rwearzblack.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/logoorange.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/logoblue.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/logoblack.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/hoodie.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/crewnecky.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/crewneckred.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/crewneckpurp.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/crewneckpink.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/crewneckblack.jpg" alt=""></div>
+  <div class="slide fade"><img src="images/beanie.jpg" alt=""></div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</section>
 
-    <!-- Navigation Arrows -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </section>
-  <br>
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span> 
-    <span class="dot" onclick="currentSlide(2)"></span> 
-    <span class="dot" onclick="currentSlide(3)"></span> 
-    <span class="dot" onclick="currentSlide(4)"></span> 
-    <span class="dot" onclick="currentSlide(5)"></span> 
-    <span class="dot" onclick="currentSlide(6)"></span> 
-    <span class="dot" onclick="currentSlide(7)"></span> 
-    <span class="dot" onclick="currentSlide(8)"></span> 
-    <span class="dot" onclick="currentSlide(9)"></span> 
-    <span class="dot" onclick="currentSlide(10)"></span> 
-    <span class="dot" onclick="currentSlide(11)"></span> 
-    <span class="dot" onclick="currentSlide(12)"></span> 
-    <span class="dot" onclick="currentSlide(13)"></span> 
-    <span class="dot" onclick="currentSlide(14)"></span> 
-    <span class="dot" onclick="currentSlide(15)"></span> 
-    <span class="dot" onclick="currentSlide(16)"></span> 
-  </div>
+<div style="text-align:center" id="dots-container"></div>
 
-  <!-- Footer -->
-  <footer id="contact">
-    <p>Contact us: righteouswearz@email.com</p>
-    <p>&copy; 2025 Righteous Wearz</p>
-  </footer>
+<footer id="contact">
+  <p>Contact us: righteouswearz@email.com</p>
+  <p>&copy; 2025 Righteous Wearz</p>
+</footer>
 
-  <!-- Scripts -->
-  <script>
-    // Slideshow
-    let slideIndex = 1;
-    showSlides(slideIndex);
+<script>
+window.onload = function() {
+  // --- Slideshow ---
+  let slideIndex = 1;
+  const slides = document.getElementsByClassName("slide");
+  const dotsContainer = document.getElementById("dots-container");
 
-    function plusSlides(n) { showSlides(slideIndex += n); }
-    function currentSlide(n) { showSlides(slideIndex = n); }
+  function showSlides(n){
+    if(n>slides.length){slideIndex=1;}
+    if(n<1){slideIndex=slides.length;}
+    for(let i=0;i<slides.length;i++){slides[i].style.display="none";}
+    const dots = dotsContainer.getElementsByClassName("dot");
+    for(let i=0;i<dots.length;i++){dots[i].className=dots[i].className.replace(" active","");}
+    slides[slideIndex-1].style.display="block";
+    if(dots[slideIndex-1]) dots[slideIndex-1].className+=" active";
+  }
 
-    function showSlides(n) {
-      let slides = document.getElementsByClassName("slide");
-      let dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-      for (let i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-    }
-    setInterval(() => { plusSlides(1); }, 5000);
+  function plusSlides(n){ showSlides(slideIndex+=n); }
+  function currentSlide(n){ showSlides(slideIndex=n); }
 
-    // Products data
-    const products = [
-      { name:"Righteous T’s", price:"$35", images:["images/rwearzwhite.jpg","images/rwearzred.jpg","images/rwearzblue.jpg","images/rwearzblack.jpg"], variants:[{size:"Medium", color:"Black", stock:1},{size:"Large", color:"Black", stock:1},{size:"2XL", color:"Black", stock:2},{size:"3XL", color:"Black", stock:1},{size:"Medium", color:"Skyblue", stock:1},{size:"Large", color:"Skyblue", stock:1},{size:"2XL", color:"Red", stock:1},{size:"3XL", color:"White", stock:1}] },
-      { name:"Hoodie", price:"$35", images:["images/hoodie.jpg"], variants:[{size:"Small", color:"Black", stock:1}] },
-      { name:"Logo T", price:"$20", images:["images/logoorange.jpg","images/logoblue.jpg","images/logoblack.jpg"], variants:[{size:"Small", color:"Black", stock:2},{size:"Small", color:"Blue", stock:1},{size:"Medium", color:"Orange", stock:1},{size:"Large", color:"Black", stock:2},{size:"Large", color:"Orange", stock:2},{size:"Large", color:"Green", stock:1}] },
-      { name:"Crewneck", price:"$25", images:["images/crewnecky.jpg","images/crewneckred.jpg","images/crewneckpurp.jpg","images/crewneckpink.jpg","images/crewneckblack.jpg"], variants:[{size:"Small", color:"Yellow", stock:"-"},{size:"Medium", color:"Black", stock:"-"},{size:"Large", color:"Black", stock:"-"},{size:"XL", color:"Black", stock:"-"},{size:"L", color:"Blue", stock:"-"},{size:"L", color:"Purple", stock:"-"},{size:"Medium", color:"Red", stock:"-"},{size:"XL", color:"Red", stock:"-"}] },
-      { name:"Saved LS", price:"$25", images:["images/saved.jpg","images/saved2.jpg"], variants:[{size:"L", color:"Blue", stock:2},{size:"L", color:"Red", stock:3},{size:"XL", color:"Red", stock:5}] },
+  // Create dots dynamically
+  for(let i=0;i<slides.length;i++){
+    const dot = document.createElement("span");
+    dot.className="dot";
+    dot.onclick=(function(i){return function(){currentSlide(i+1);}})(i);
+    dotsContainer.appendChild(dot);
+  }
+
+  showSlides(slideIndex);
+  setInterval(()=>{plusSlides(1);},5000);
+
+  // --- Shop Products ---
+  const products = [
+    { name:"Righteous T’s", price:"$35", images:["images/rwearzwhite.jpg","images/rwearzred.jpg","images/rwearzblue.jpg","images/rwearzblack.jpg"], variants:[{size:"Medium", color:"Black", stock:1},{size:"Large", color:"Black", stock:1},{size:"2XL", color:"Black", stock:2},{size:"3XL", color:"Black", stock:1},{size:"Medium", color:"Skyblue", stock:1},{size:"Large", color:"Skyblue", stock:1},{size:"2XL", color:"Red", stock:1},{size:"3XL", color:"White", stock:1}] },
+    { name:"Hoodie", price:"$35", images:["images/hoodie.jpg"], variants:[
