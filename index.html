@@ -1,245 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Righteous Wearz Shop</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Righteous Wearz</title>
+<style>
+* {margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
+body {background:#f4f4f4; color:#222; text-align:center;}
 
-    header {
-      background-color: #0e4cff;
-      color: white;
-      padding: 20px 0;
-    }
+/* Header */
+header {background:#87CEEB; color:white; padding:2rem 1rem;}
+header h1 {font-size:2.2rem; margin-bottom:0.5rem;}
+header p {font-size:1.2rem;}
 
-    h1 {
-      margin: 0;
-      font-size: 28px;
-    }
+/* Navigation */
+nav {display:flex; justify-content:center; background:#222; flex-wrap:wrap;}
+nav a {color:white; padding:0.8rem 1rem; text-decoration:none; font-weight:bold;}
+nav a:hover {background:#444;}
 
-    #shop {
-      padding: 30px 20px;
-    }
+/* Sections */
+section {padding:2rem 1rem;}
+section h2 {text-align:center; margin-bottom:1rem;}
+#mission {background:#FFD700; color:#222;}
+#gallery {background:#e6f0ff;}
 
-    .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-    }
+/* Shop */
+.product-grid {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px;}
+.product-card {background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); width:260px; padding:15px; text-align:center; position:relative;}
+.product-card h3 {margin-bottom:0.5rem;}
+.product-card .price {font-weight:bold; margin-bottom:0.5rem;}
+.mini-slideshow {width:100%; height:260px; position:relative; overflow:hidden; border-radius:8px; margin-bottom:10px;}
+.mini-slideshow img {width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0; transition:opacity 1s; cursor:pointer;}
+.mini-slideshow img.active {opacity:1;}
 
-    .product-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 260px;
-      padding: 15px;
-      text-align: center;
-      position: relative;
-    }
+/* Popup */
+.popup {position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:none; justify-content:center; align-items:center; z-index:999;}
+.popup-content {background:white; padding:25px; border-radius:10px; text-align:center; max-width:300px;}
+.popup-content h4 {margin-top:0;}
+.popup-content button {background:#0e4cff; color:white; border:none; padding:8px 14px; border-radius:6px; margin-top:10px; cursor:pointer;}
 
-    .mini-slideshow {
-      width: 100%;
-      height: 260px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-    }
+/* Slideshow dots */
+.slideshow-container {position:relative; max-width:100%; margin:auto; overflow:hidden;}
+.slide {display:none;}
+.slide img {width:100%; height:auto;}
+.prev, .next {cursor:pointer; position:absolute; top:50%; padding:1rem; margin-top:-22px; color:white; font-weight:bold; font-size:2rem; transition:0.3s; border-radius:0 3px 3px 0; user-select:none;}
+.next {right:0; border-radius:3px 0 0 3px;}
+.prev:hover, .next:hover {background-color:rgba(0,0,0,0.5);}
+.dot {cursor:pointer; height:15px; width:15px; margin:0 2px; background-color:#bbb; border-radius:50%; display:inline-block; transition:background-color 0.3s;}
+.active, .dot:hover {background-color:#717171;}
 
-    .mini-slideshow img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      cursor: pointer;
-    }
+/* Footer */
+footer {background:#222; color:white; text-align:center; padding:1rem; margin-top:2rem;}
 
-    .mini-slideshow img.active {
-      opacity: 1;
-    }
-
-    .price {
-      font-weight: bold;
-      color: #333;
-    }
-
-    footer {
-      background-color: #0e4cff;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      margin-top: 40px;
-    }
-
-    /* Popup */
-    .popup {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-
-    .popup-content {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      text-align: center;
-      max-width: 300px;
-    }
-
-    .popup-content h4 {
-      margin-top: 0;
-    }
-
-    .popup button {
-      background: #0e4cff;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-  </style>
+/* Responsive */
+@media(max-width:768px) {header h1{font-size:1.5rem;} .product-card {width:90%;}}
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Righteous Wearz Shop</h1>
-  </header>
+<header>
+  <h1>Righteous Wearz</h1>
+  <p>Prophetic Covering for the Righteous Remnant</p>
+</header>
 
-  <section id="shop">
-    <div class="product-grid">
+<nav>
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#mission">Mission</a>
+  <a href="#shop">Shop</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-      <!-- Saved Tee -->
-      <div class="product-card">
-        <div class="mini-slideshow">
-          <img src="saved.jpg" alt="Saved Tee 1" class="active" data-name="Saved Tee" data-sizes="M–XL">
-          <img src="saved2.jpg" alt="Saved Tee 2" data-name="Saved Tee" data-sizes="M–XL">
-        </div>
-        <h3>Saved Tee</h3>
-        <p class="price">$35</p>
+<section id="about">
+  <h2>About Us</h2>
+  <p>Righteous Wearz is a prophetic covering for the righteous remnant — a brand that recognizes God’s people above all others. When you wear Righteous Wearz, you declare that you are a person of God, righteous, not wicked, and one who seeks to thrive in love, peace, and godliness.</p>
+</section>
+
+<section id="mission">
+  <h2>Mission & Vision</h2>
+  <p>Our mission is simple: <strong>The brand speaks for itself</strong>. We aim to do what the Lord commanded: feed the hungry, clothe the naked, love your neighbor, and help the sick.</p>
+  <p>Our vision is to cover the earth with a prophetic covering that recognizes people who are morally correct and living in godliness.</p>
+</section>
+
+<section id="shop">
+  <h2>Shop Our Collection</h2>
+  <div class="product-grid">
+
+    <!-- Saved Tee -->
+    <div class="product-card">
+      <div class="mini-slideshow">
+        <img src="saved.jpg" class="active" data-name="Saved Tee" data-size="M–XL">
+        <img src="saved2.jpg" data-name="Saved Tee" data-size="M–XL">
       </div>
-
-      <!-- Righteous Wearz Tee -->
-      <div class="product-card">
-        <div class="mini-slideshow">
-          <img src="rwearzwhite.jpg" alt="Righteous White" class="active" data-name="Righteous Wearz Tee (White)" data-sizes="M–3XL">
-          <img src="rwearzred.jpg" alt="Righteous Red" data-name="Righteous Wearz Tee (Red)" data-sizes="M–3XL">
-          <img src="rwearzblue.jpg" alt="Righteous Blue" data-name="Righteous Wearz Tee (Blue)" data-sizes="M–3XL">
-          <img src="rwearzblack.jpg" alt="Righteous Black" data-name="Righteous Wearz Tee (Black)" data-sizes="M–3XL">
-        </div>
-        <h3>Righteous Wearz Tee</h3>
-        <p class="price">$35</p>
-      </div>
-
-      <!-- Logo Tee -->
-      <div class="product-card">
-        <div class="mini-slideshow">
-          <img src="logoorange.jpg" alt="Logo Tee Orange" class="active" data-name="Logo Tee (Orange)" data-sizes="S–XL">
-          <img src="logoblue.jpg" alt="Logo Tee Blue" data-name="Logo Tee (Blue)" data-sizes="S–XL">
-          <img src="logoblack.jpg" alt="Logo Tee Black" data-name="Logo Tee (Black)" data-sizes="S–XL">
-        </div>
-        <h3>Logo Tee</h3>
-        <p class="price">$35</p>
-      </div>
-
-      <!-- Hoodie -->
-      <div class="product-card">
-        <div class="mini-slideshow">
-          <img src="hoodie.jpg" alt="Hoodie" class="active" data-name="Hoodie" data-sizes="M–2XL">
-        </div>
-        <h3>Hoodie</h3>
-        <p class="price">$50</p>
-      </div>
-
-      <!-- Crewneck -->
-      <div class="product-card">
-        <div class="mini-slideshow">
-          <img src="crewnecky.jpg" alt="Crewneck Yellow" class="active" data-name="Crewneck (Yellow)" data-sizes="S–2XL">
-          <img src="crewneckred.jpg" alt="Crewneck Red" data-name="Crewneck (Red)" data-sizes="S–2XL">
-          <img src="crewneckpurp.jpg" alt="Crewneck Purple" data-name="Crewneck (Purple)" data-sizes="S–2XL">
-          <img src="crewneckpink.jpg" alt="Crewneck Pink" data-name="Crewneck (Pink)" data-sizes="S–2XL">
-          <img src="crewneckblack.jpg" alt="Crewneck Black" data-name="Crewneck (Black)" data-sizes="S–2XL">
-        </div>
-        <h3>Crewneck</h3>
-        <p class="price">$45</p>
-      </div>
-
-      <!-- Beanie -->
-      <div class="product-card">
-        <div class="mini-slideshow">
-          <img src="beanie.jpg" alt="Beanie" class="active" data-name="Beanie" data-sizes="One Size Fits All">
-        </div>
-        <h3>Beanie</h3>
-        <p class="price">$25</p>
-      </div>
-
+      <h3>Saved Tee</h3>
+      <p class="price">$35</p>
     </div>
-  </section>
 
-  <footer>
-    <p>© 2025 Righteous Wearz | Cash App: $RighteousWearz</p>
-  </footer>
-
-  <!-- Popup -->
-  <div class="popup" id="popup">
-    <div class="popup-content">
-      <h4 id="popupTitle"></h4>
-      <p id="popupSizes"></p>
-      <button onclick="closePopup()">Close</button>
+    <!-- Righteous Wearz Tee -->
+    <div class="product-card">
+      <div class="mini-slideshow">
+        <img src="rwearzwhite.jpg" class="active" data-name="Righteous Wearz Tee (White)" data-size="M–3XL">
+        <img src="rwearzred.jpg" data-name="Righteous Wearz Tee (Red)" data-size="M–3XL">
+        <img src="rwearzblue.jpg" data-name="Righteous Wearz Tee (Blue)" data-size="M–3XL">
+        <img src="rwearzblack.jpg" data-name="Righteous Wearz Tee (Black)" data-size="M–3XL">
+      </div>
+      <h3>Righteous Wearz Tee</h3>
+      <p class="price">$32</p>
     </div>
+
+    <!-- Logo Tee -->
+    <div class="product-card">
+      <div class="mini-slideshow">
+        <img src="logoorange.jpg" class="active" data-name="Logo Tee (Orange)" data-size="S–XL">
+        <img src="logoblue.jpg" data-name="Logo Tee (Blue)" data-size="S–XL">
+        <img src="logoblack.jpg" data-name="Logo Tee (Black)" data-size="S–XL">
+      </div>
+      <h3>Logo Tee</h3>
+      <p class="price">$20</p>
+    </div>
+
+    <!-- Hoodie -->
+    <div class="product-card">
+      <div class="mini-slideshow">
+        <img src="hoodie.jpg" class="active" data-name="Hoodie" data-size="M–2XL">
+      </div>
+      <h3>Hoodie</h3>
+      <p class="price">$40</p>
+    </div>
+
+    <!-- Crewneck -->
+    <div class="product-card">
+      <div class="mini-slideshow">
+        <img src="crewnecky.jpg" class="active" data-name="Crewneck (Yellow)" data-size="S–2XL">
+        <img src="crewneckred.jpg" data-name="Crewneck (Red)" data-size="S–2XL">
+        <img src="crewneckpurp.jpg" data-name="Crewneck (Purple)" data-size="S–2XL">
+        <img src="crewneckpink.jpg" data-name="Crewneck (Pink)" data-size="S–2XL">
+        <img src="crewneckblack.jpg" data-name="Crewneck (Black)" data-size="S–2XL">
+      </div>
+      <h3>Crewneck</h3>
+      <p class="price">$25</p>
+    </div>
+
+    <!-- Beanie -->
+    <div class="product-card">
+      <div class="mini-slideshow">
+        <img src="beanie.jpg" class="active" data-name="Beanie" data-size="One Size">
+      </div>
+      <h3>Beanie</h3>
+      <p class="price">$25</p>
+    </div>
+
   </div>
+</section>
 
-  <script>
-    // Slideshow logic
-    document.querySelectorAll('.mini-slideshow').forEach(slideshow => {
-      let images = slideshow.querySelectorAll('img');
-      let current = 0;
-      setInterval(() => {
-        images[current].classList.remove('active');
-        current = (current + 1) % images.length;
-        images[current].classList.add('active');
-      }, 2500);
-    });
+<section id="gallery" class="slideshow-container">
+  <div class="slide fade"><img src="saved.jpg" alt=""></div>
+  <div class="slide fade"><img src="saved2.jpg" alt=""></div>
+  <div class="slide fade"><img src="rwearzwhite.jpg" alt=""></div>
+  <div class="slide fade"><img src="rwearzred.jpg" alt=""></div>
+  <div class="slide fade"><img src="rwearzblue.jpg" alt=""></div>
+  <div class="slide fade"><img src="rwearzblack.jpg" alt=""></div>
+  <div class="slide fade"><img src="logoorange.jpg" alt=""></div>
+  <div class="slide fade"><img src="logoblue.jpg" alt=""></div>
+  <div class="slide fade"><img src="logoblack.jpg" alt=""></div>
+  <div class="slide fade"><img src="hoodie.jpg" alt=""></div>
+  <div class="slide fade"><img src="crewnecky.jpg" alt=""></div>
+  <div class="slide fade"><img src="crewneckred.jpg" alt=""></div>
+  <div class="slide fade"><img src="crewneckpurp.jpg" alt=""></div>
+  <div class="slide fade"><img src="crewneckpink.jpg" alt=""></div>
+  <div class="slide fade"><img src="crewneckblack.jpg" alt=""></div>
+  <div class="slide fade"><img src="beanie.jpg" alt=""></div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</section>
 
-    // Popup logic
-    const popup = document.getElementById('popup');
-    const popupTitle = document.getElementById('popupTitle');
-    const popupSizes = document.getElementById('popupSizes');
+<div style="text-align:center" id="dots-container"></div>
 
-    document.querySelectorAll('.mini-slideshow img').forEach(img => {
-      img.addEventListener('click', () => {
-        popupTitle.textContent = img.dataset.name;
-        popupSizes.textContent = "Available Sizes: " + img.dataset.sizes;
-        popup.style.display = 'flex';
-      });
-    });
+<footer id="contact">
+  <p>Contact us: righteouswearz@email.com</p>
+  <p>&copy; 2025 Righteous Wearz</p>
+</footer>
 
-    function closePopup() {
-      popup.style.display = 'none';
-    }
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h4 id="popupTitle"></h4>
+    <p id="popupSizes"></p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
 
-    // Close popup when clicking outside
-    popup.addEventListener('click', e => {
-      if (e.target === popup) closePopup();
-    });
-  </script>
-
-</body>
-</html>
+<script>
+// Shop mini-slideshows
+document.querySelectorAll('.mini-slideshow').forEach(slideshow=>{
+  let images=slideshow.querySelectorAll('img');
+  let current=0;
+  setInterval(()=>{
+    images[current].classList.remove('active');
+    current=(current+1)%images.length;
+    images[current].classList.add('
