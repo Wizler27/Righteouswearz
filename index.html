@@ -39,6 +39,7 @@ section h2 {margin-bottom:1rem;}
 .popup-content h4 {margin-top:0;}
 .popup-content p {margin-top:8px;}
 .popup-content button {background:#3b82f6; color:white; border:none; padding:8px 14px; border-radius:6px; margin-top:10px; cursor:pointer;}
+.popup-content button:hover {background:#2563eb;}
 
 /* Gallery */
 .slideshow-container {position:relative; max-width:100%; margin:auto; overflow:hidden;}
@@ -80,6 +81,7 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
   <p>Our mission: to feed the hungry, clothe the naked, love our neighbors, and honor God through our work.</p>
 </section>
 
+<!-- SHOP SECTION -->
 <section id="shop">
   <h2>Shop</h2>
   <div class="product-grid">
@@ -88,7 +90,7 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
     <div class="product-card">
       <div class="mini-slideshow">
         <img src="rwearzblack.jpg" class="active" data-name="Righteous Wearz Tee (Black)" data-size="M (1), L (1), 2XL (2), 3XL (1)">
-        <img src="rwearzskyblue.jpg" data-name="Righteous Wearz Tee (Skyblue)" data-size="M (1), L (1)">
+        <img src="rwearzskyblue.jpg" data-name="Righteous Wearz Tee (Sky Blue)" data-size="M (1), L (1)">
         <img src="rwearzred.jpg" data-name="Righteous Wearz Tee (Red)" data-size="2XL (1)">
         <img src="rwearzwhite.jpg" data-name="Righteous Wearz Tee (White)" data-size="3XL (1)">
       </div>
@@ -103,7 +105,7 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
         <img src="logoblack.jpg" class="active" data-name="Logo Tee (Black)" data-size="S (2), L (2)">
         <img src="logoblue.jpg" data-name="Logo Tee (Blue)" data-size="S (1)">
         <img src="logoorange.jpg" data-name="Logo Tee (Orange)" data-size="M (1), L (2)">
-        <img src="logogreen.jpg" data-name="Logo Tee (Green)" data-size="L (1)">
+        <!-- Green not added because no image file -->
       </div>
       <h3>Logo Tee</h3>
       <p class="price">$20</p>
@@ -113,11 +115,10 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
     <!-- Crewneck -->
     <div class="product-card">
       <div class="mini-slideshow">
-        <img src="crewnecky.jpg" class="active" data-name="Crewneck (Yellow)" data-size="M–XL Black">
-        <img src="crewneckblue.jpg" data-name="Crewneck (Blue)" data-size="L">
-        <img src="crewneckpurp.jpg" data-name="Crewneck (Purple)" data-size="L">
+        <img src="crewneckblack.jpg" class="active" data-name="Crewneck (Black)" data-size="M, L, XL">
         <img src="crewneckred.jpg" data-name="Crewneck (Red)" data-size="M, XL">
-        <img src="crewneckblack.jpg" data-name="Crewneck (Black)" data-size="M, L, XL">
+        <img src="crewneckpurp.jpg" data-name="Crewneck (Purple)" data-size="L">
+        <img src="crewnecky.jpg" data-name="Crewneck (Yellow)" data-size="M–XL">
       </div>
       <h3>Crewneck</h3>
       <p class="price">$25</p>
@@ -171,7 +172,7 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
 </footer>
 
 <script>
-/* Mini Slideshows */
+/* === Auto Slideshows === */
 document.querySelectorAll('.mini-slideshow').forEach(slideshow => {
   const slides = slideshow.querySelectorAll('img');
   let current = 0;
@@ -182,7 +183,7 @@ document.querySelectorAll('.mini-slideshow').forEach(slideshow => {
   }, 2500);
 });
 
-/* Popup Info */
+/* === Popup Info === */
 const popup = document.createElement('div');
 popup.classList.add('popup');
 popup.innerHTML = '<div class="popup-content"><h4></h4><p></p><button>Close</button></div>';
@@ -190,6 +191,7 @@ document.body.appendChild(popup);
 const popupTitle = popup.querySelector('h4');
 const popupSize = popup.querySelector('p');
 popup.querySelector('button').onclick = () => popup.style.display = 'none';
+
 document.querySelectorAll('.mini-slideshow img').forEach(img => {
   img.onclick = () => {
     popupTitle.textContent = img.dataset.name;
