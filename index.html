@@ -29,27 +29,8 @@ section h2 {margin-bottom:1rem;}
 .product-card {background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); width:260px; padding:15px; text-align:center; position:relative;}
 .product-card h3 {margin-bottom:0.5rem;}
 .product-card .price {font-weight:bold; margin-bottom:0.5rem;}
-.mini-slideshow {width:100%; height:250px; position:relative; overflow:hidden; border-radius:8px; margin-bottom:10px;}
-.mini-slideshow img {width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0; transition:opacity 1s; cursor:pointer;}
-.mini-slideshow img.active {opacity:1;}
-
-/* Popup */
-.popup {position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:none; justify-content:center; align-items:center; z-index:999;}
-.popup-content {background:white; padding:25px; border-radius:10px; text-align:center; max-width:320px;}
-.popup-content h4 {margin-top:0;}
-.popup-content p {margin-top:8px;}
-.popup-content button {background:#3b82f6; color:white; border:none; padding:8px 14px; border-radius:6px; margin-top:10px; cursor:pointer;}
-.popup-content button:hover {background:#2563eb;}
-
-/* Gallery */
-.slideshow-container {position:relative; max-width:100%; margin:auto; overflow:hidden;}
-.slide {display:none;}
-.slide img {width:100%; height:auto;}
-.prev, .next {cursor:pointer; position:absolute; top:50%; padding:1rem; margin-top:-22px; color:white; font-weight:bold; font-size:2rem; user-select:none;}
-.next {right:0;}
-.prev:hover, .next:hover {background:rgba(0,0,0,0.5);}
-.dot {cursor:pointer; height:15px; width:15px; margin:0 2px; background-color:#bbb; border-radius:50%; display:inline-block; transition:background-color 0.3s;}
-.active, .dot:hover {background-color:#717171;}
+.product-card img {width:100%; height:250px; object-fit:cover; border-radius:8px; margin-bottom:10px;}
+.product-card select {padding:5px; margin-bottom:10px;}
 
 /* Footer */
 footer {background:#111; color:white; text-align:center; padding:1rem; margin-top:2rem;}
@@ -88,59 +69,64 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
 
     <!-- Righteous Wearz Tee -->
     <div class="product-card">
-      <div class="mini-slideshow">
-        <img src="rwearzblack.jpg" class="active" data-name="Righteous Wearz Tee (Black)" data-size="M (1), L (1), 2XL (2), 3XL (1)">
-        <img src="rwearzskyblue.jpg" data-name="Righteous Wearz Tee (Sky Blue)" data-size="M (1), L (1)">
-        <img src="rwearzred.jpg" data-name="Righteous Wearz Tee (Red)" data-size="2XL (1)">
-        <img src="rwearzwhite.jpg" data-name="Righteous Wearz Tee (White)" data-size="3XL (1)">
-      </div>
+      <img id="rwearz-img" src="rwearzblack.jpg" alt="Righteous Wearz Tee">
       <h3>Righteous Wearz Tee</h3>
       <p class="price">$35</p>
-      <p>Sizes: M–3XL</p>
+      <label for="rwearz-color">Color:</label>
+      <select id="rwearz-color">
+        <option value="black">Black</option>
+        <option value="skyblue">Skyblue</option>
+        <option value="red">Red</option>
+        <option value="white">White</option>
+      </select>
+      <p id="rwearz-sizes">Sizes: M (1), L (1), 2XL (2), 3XL (1)</p>
     </div>
 
     <!-- Logo Tee -->
     <div class="product-card">
-      <div class="mini-slideshow">
-        <img src="logoblack.jpg" class="active" data-name="Logo Tee (Black)" data-size="S (2), L (2)">
-        <img src="logoblue.jpg" data-name="Logo Tee (Blue)" data-size="S (1)">
-        <img src="logoorange.jpg" data-name="Logo Tee (Orange)" data-size="M (1), L (2)">
-        <!-- Green not added because no image file -->
-      </div>
+      <img id="logo-img" src="logoblack.jpg" alt="Logo Tee">
       <h3>Logo Tee</h3>
       <p class="price">$20</p>
-      <p>Sizes: S–L</p>
+      <label for="logo-color">Color:</label>
+      <select id="logo-color">
+        <option value="black">Black</option>
+        <option value="blue">Blue</option>
+        <option value="orange">Orange</option>
+      </select>
+      <p id="logo-sizes">Sizes: S (2), S (1), M (1), L (2)</p>
     </div>
 
     <!-- Crewneck -->
     <div class="product-card">
-      <div class="mini-slideshow">
-        <img src="crewneckblack.jpg" class="active" data-name="Crewneck (Black)" data-size="M, L, XL">
-        <img src="crewneckred.jpg" data-name="Crewneck (Red)" data-size="M, XL">
-        <img src="crewneckpurp.jpg" data-name="Crewneck (Purple)" data-size="L">
-        <img src="crewnecky.jpg" data-name="Crewneck (Yellow)" data-size="M–XL">
-      </div>
+      <img id="crew-img" src="crewneckblack.jpg" alt="Crewneck">
       <h3>Crewneck</h3>
       <p class="price">$25</p>
-      <p>Sizes: M–XL</p>
+      <label for="crew-color">Color:</label>
+      <select id="crew-color">
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="purple">Purple</option>
+        <option value="yellow">Yellow</option>
+      </select>
+      <p id="crew-sizes">Sizes: M, L, XL</p>
     </div>
 
     <!-- Saved LS -->
     <div class="product-card">
-      <div class="mini-slideshow">
-        <img src="savedblue.jpg" class="active" data-name="Saved LS (Blue)" data-size="L (2)">
-        <img src="savedred.jpg" data-name="Saved LS (Red)" data-size="L (3), XL (5)">
-      </div>
+      <img id="saved-img" src="savedblue.jpg" alt="Saved LS">
       <h3>Saved Long Sleeve</h3>
       <p class="price">$25</p>
-      <p>Sizes: L–XL</p>
+      <label for="saved-color">Color:</label>
+      <select id="saved-color">
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+      </select>
+      <p id="saved-sizes">Sizes: L (2), L (3), XL (5)</p>
     </div>
 
     <!-- Hoodie -->
     <div class="product-card">
-      <div class="mini-slideshow">
-        <img src="hoodie.jpg" class="active" data-name="Hoodie" data-size="M–2XL">
-      </div>
+      <img id="hoodie-img" src="hoodie.jpg" alt="Hoodie">
       <h3>Hoodie</h3>
       <p class="price">$40</p>
       <p>Sizes: M–2XL</p>
@@ -148,9 +134,7 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
 
     <!-- Beanie -->
     <div class="product-card">
-      <div class="mini-slideshow">
-        <img src="beanie.jpg" class="active" data-name="Beanie" data-size="One Size">
-      </div>
+      <img src="beanie.jpg" alt="Beanie">
       <h3>Beanie</h3>
       <p class="price">$25</p>
       <p>One Size Fits All</p>
@@ -161,44 +145,62 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
 
 <section id="gallery">
   <h2>Gallery</h2>
-  <div class="slideshow-container">
-    <div class="slide"><img src="saved.jpg"></div>
-    <div class="slide"><img src="saved2.jpg"></div>
+  <div>
+    <img src="saved.jpg" alt="" style="width:100%; max-width:500px; margin-bottom:10px;">
+    <img src="saved2.jpg" alt="" style="width:100%; max-width:500px;">
   </div>
 </section>
 
-<footer>
+<footer id="contact">
   <p>&copy; 2025 Righteous Wearz | All Rights Reserved</p>
 </footer>
 
 <script>
-/* === Auto Slideshows === */
-document.querySelectorAll('.mini-slideshow').forEach(slideshow => {
-  const slides = slideshow.querySelectorAll('img');
-  let current = 0;
-  setInterval(() => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }, 2500);
-});
+// Product color & sizes mapping
+const rwearzData = {
+  black: {img:'rwearzblack.jpg', sizes:'M (1), L (1), 2XL (2), 3XL (1)'},
+  skyblue: {img:'rwearzskyblue.jpg', sizes:'M (1), L (1)'},
+  red: {img:'rwearzred.jpg', sizes:'2XL (1)'},
+  white: {img:'rwearzwhite.jpg', sizes:'3XL (1)'}
+};
+document.getElementById('rwearz-color').onchange = function() {
+  const val = this.value;
+  document.getElementById('rwearz-img').src = rwearzData[val].img;
+  document.getElementById('rwearz-sizes').textContent = 'Sizes: ' + rwearzData[val].sizes;
+};
 
-/* === Popup Info === */
-const popup = document.createElement('div');
-popup.classList.add('popup');
-popup.innerHTML = '<div class="popup-content"><h4></h4><p></p><button>Close</button></div>';
-document.body.appendChild(popup);
-const popupTitle = popup.querySelector('h4');
-const popupSize = popup.querySelector('p');
-popup.querySelector('button').onclick = () => popup.style.display = 'none';
+const logoData = {
+  black: {img:'logoblack.jpg', sizes:'S (2), L (2)'},
+  blue: {img:'logoblue.jpg', sizes:'S (1)'},
+  orange: {img:'logoorange.jpg', sizes:'M (1), L (2)'}
+};
+document.getElementById('logo-color').onchange = function() {
+  const val = this.value;
+  document.getElementById('logo-img').src = logoData[val].img;
+  document.getElementById('logo-sizes').textContent = 'Sizes: ' + logoData[val].sizes;
+};
 
-document.querySelectorAll('.mini-slideshow img').forEach(img => {
-  img.onclick = () => {
-    popupTitle.textContent = img.dataset.name;
-    popupSize.textContent = 'Available Sizes: ' + img.dataset.size;
-    popup.style.display = 'flex';
-  };
-});
+const crewData = {
+  black: {img:'crewneckblack.jpg', sizes:'M, L, XL'},
+  red: {img:'crewneckred.jpg', sizes:'M, XL'},
+  purple: {img:'crewneckpurp.jpg', sizes:'L'},
+  yellow: {img:'crewnecky.jpg', sizes:'M–XL'}
+};
+document.getElementById('crew-color').onchange = function() {
+  const val = this.value;
+  document.getElementById('crew-img').src = crewData[val].img;
+  document.getElementById('crew-sizes').textContent = 'Sizes: ' + crewData[val].sizes;
+};
+
+const savedData = {
+  blue: {img:'savedblue.jpg', sizes:'L (2)'},
+  red: {img:'savedred.jpg', sizes:'L (3), XL (5)'}
+};
+document.getElementById('saved-color').onchange = function() {
+  const val = this.value;
+  document.getElementById('saved-img').src = savedData[val].img;
+  document.getElementById('saved-sizes').textContent = 'Sizes: ' + savedData[val].sizes;
+};
 </script>
+
 </body>
-</html>
