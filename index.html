@@ -34,6 +34,48 @@ section h2 {margin-bottom:1rem;}
 
 /* Footer */
 footer {background:#111; color:white; text-align:center; padding:1rem; margin-top:2rem;}
+
+/* Gallery Section */
+#gallery {
+  background: #eaf3ff;
+  padding: 2rem 1rem 4rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 2px solid #eee;
+}
+
+.gallery-item .caption {
+  padding: 15px;
+  color: #333;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.5;
+}
 </style>
 </head>
 <body>
@@ -143,11 +185,45 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
   </div>
 </section>
 
+<!-- ✅ GALLERY SECTION (only certain ones have captions) -->
 <section id="gallery">
   <h2>Gallery</h2>
-  <div>
-    <img src="saved.jpg" alt="" style="width:100%; max-width:500px; margin-bottom:10px;">
-    <img src="saved2.jpg" alt="" style="width:100%; max-width:500px;">
+  <div class="gallery-grid">
+
+    <div class="gallery-item"><img src="erick.jpg" alt="Erick"></div>
+
+    <div class="gallery-item"><img src="willie.jpg" alt="Willie"></div>
+
+    <div class="gallery-item"><img src="sonnyback.jpg" alt="Sonny Back"></div>
+
+    <div class="gallery-item">
+      <img src="jacob.jpg" alt="Jacob">
+      <p class="caption">“You are in the light side. There is a battle between light and darkness, and you have chosen to join the light force. Be you and let your light shine.”</p>
+    </div>
+
+    <div class="gallery-item"><img src="joey.jpg" alt="Joey"></div>
+
+    <div class="gallery-item">
+      <img src="wiz.jpg" alt="Wiz">
+      <p class="caption">“Blessed are the peacemakers. When you wear Righteous, you are representing peace — a man that seeks peace with God and with others.”</p>
+    </div>
+
+    <div class="gallery-item"><img src="hat.jpg" alt="Hat"></div>
+
+    <div class="gallery-item"><img src="flynn.jpg" alt="Flynn"></div>
+
+    <div class="gallery-item">
+      <img src="dickens.jpg" alt="Dickens">
+      <p class="caption">“You’re clothed with power. When you wear Righteous Wearz, you’re carrying your cross to strive with strength to live the godly way. It’s like putting on the power.”</p>
+    </div>
+
+    <div class="gallery-item"><img src="dickenssave.jpg" alt="Dickens Save"></div>
+
+    <div class="gallery-item">
+      <img src="gym.jpg" alt="Gym">
+      <p class="caption">“This brand is different from other brands because you will know so much about a person wearing Righteous. Though they may look different by physical looks and race, they embody the temple of a godly man.”</p>
+    </div>
+
   </div>
 </section>
 
@@ -204,3 +280,4 @@ document.getElementById('saved-color').onchange = function() {
 </script>
 
 </body>
+</html>
