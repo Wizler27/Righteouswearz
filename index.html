@@ -35,7 +35,7 @@ section h2 {margin-bottom:1rem;}
 /* Footer */
 footer {background:#111; color:white; text-align:center; padding:1rem; margin-top:2rem;}
 
-/* Gallery Section */
+/* ✅ GALLERY SECTION FIXED */
 #gallery {
   background: #eaf3ff;
   padding: 2rem 1rem 4rem;
@@ -55,6 +55,9 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .gallery-item:hover {
@@ -62,10 +65,12 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
+/* 🔧 Fixed so full heads show */
 .gallery-item img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: auto; /* Let image keep full proportions */
+  object-fit: contain; /* show full image, no cropping */
+  background-color: #f4f4f4; /* subtle background behind non-square images */
   border-bottom: 2px solid #eee;
 }
 
@@ -109,7 +114,6 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
   <h2>Shop</h2>
   <div class="product-grid">
 
-    <!-- Righteous Wearz Tee -->
     <div class="product-card">
       <img id="rwearz-img" src="rwearzblack.jpg" alt="Righteous Wearz Tee">
       <h3>Righteous Wearz Tee</h3>
@@ -124,7 +128,6 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
       <p id="rwearz-sizes">Sizes: M (1), L (1), 2XL (2), 3XL (1)</p>
     </div>
 
-    <!-- Logo Tee -->
     <div class="product-card">
       <img id="logo-img" src="logoblack.jpg" alt="Logo Tee">
       <h3>Logo Tee</h3>
@@ -138,7 +141,6 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
       <p id="logo-sizes">Sizes: S (2), S (1), M (1), L (2)</p>
     </div>
 
-    <!-- Crewneck -->
     <div class="product-card">
       <img id="crew-img" src="crewneckblack.jpg" alt="Crewneck">
       <h3>Crewneck</h3>
@@ -153,7 +155,6 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
       <p id="crew-sizes">Sizes: M, L, XL</p>
     </div>
 
-    <!-- Saved LS -->
     <div class="product-card">
       <img id="saved-img" src="savedblue.jpg" alt="Saved LS">
       <h3>Saved Long Sleeve</h3>
@@ -166,7 +167,6 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
       <p id="saved-sizes">Sizes: L (2), L (3), XL (5)</p>
     </div>
 
-    <!-- Hoodie -->
     <div class="product-card">
       <img id="hoodie-img" src="hoodie.jpg" alt="Hoodie">
       <h3>Hoodie</h3>
@@ -174,7 +174,6 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
       <p>Sizes: M–2XL</p>
     </div>
 
-    <!-- Beanie -->
     <div class="product-card">
       <img src="beanie.jpg" alt="Beanie">
       <h3>Beanie</h3>
@@ -185,15 +184,13 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
   </div>
 </section>
 
-<!-- ✅ GALLERY SECTION (only certain ones have captions) -->
+<!-- ✅ GALLERY SECTION FIXED -->
 <section id="gallery">
   <h2>Gallery</h2>
   <div class="gallery-grid">
 
     <div class="gallery-item"><img src="erick.jpg" alt="Erick"></div>
-
     <div class="gallery-item"><img src="willie.jpg" alt="Willie"></div>
-
     <div class="gallery-item"><img src="sonnyback.jpg" alt="Sonny Back"></div>
 
     <div class="gallery-item">
@@ -209,7 +206,6 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
     </div>
 
     <div class="gallery-item"><img src="hat.jpg" alt="Hat"></div>
-
     <div class="gallery-item"><img src="flynn.jpg" alt="Flynn"></div>
 
     <div class="gallery-item">
@@ -232,7 +228,6 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
 </footer>
 
 <script>
-// Product color & sizes mapping
 const rwearzData = {
   black: {img:'rwearzblack.jpg', sizes:'M (1), L (1), 2XL (2), 3XL (1)'},
   skyblue: {img:'rwearzskyblue.jpg', sizes:'M (1), L (1)'},
