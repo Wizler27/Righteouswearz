@@ -1,280 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Righteous Wearz</title>
-<style>
-* {margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
-body {background:#f4f4f4; color:#222; text-align:center;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Righteous Wearz – Founder</title>
 
-/* Header */
-header {background:#3b82f6; color:white; padding:2rem 1rem;}
-header h1 {font-size:2.2rem; margin-bottom:0.5rem;}
-header p {font-size:1.1rem;}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
 
-/* Navigation */
-nav {display:flex; justify-content:center; background:#111; flex-wrap:wrap;}
-nav a {color:white; padding:0.8rem 1.2rem; text-decoration:none; font-weight:bold;}
-nav a:hover {background:#333;}
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
 
-/* Sections */
-section {padding:2rem 1rem;}
-section h2 {margin-bottom:1rem;}
-#mission {background:#ffe347; color:#222;}
-#gallery {background:#eaf3ff;}
+    /* Founder Section Wrapper */
+    #founder {
+      padding: 50px 20px;
+      background: #fff;
+      max-width: 1100px;
+      margin: 40px auto;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
 
-/* Product Grid */
-.product-grid {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px;}
-.product-card {background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); width:260px; padding:15px; text-align:center; position:relative;}
-.product-card h3 {margin-bottom:0.5rem;}
-.product-card .price {font-weight:bold; margin-bottom:0.5rem;}
-.product-card img {width:100%; height:auto; max-height:250px; object-fit:contain; border-radius:8px; margin-bottom:10px;}
-.product-card select {padding:5px; margin-bottom:10px;}
+    #founder h2 {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 30px;
+      font-weight: 800;
+    }
 
-/* Gallery Section */
-#gallery {
-  background: #eaf3ff;
-  padding: 2rem 1rem 4rem;
-}
+    .founder-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    .founder-container img {
+      width: 340px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.20);
+    }
 
-.gallery-item {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .founder-text {
+      max-width: 600px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
 
-.gallery-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
+    .founder-text p {
+      margin-bottom: 18px;
+    }
 
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  max-height: 350px;
-  object-fit: contain;
-  border-bottom: 2px solid #eee;
-}
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #000;
+      color: #fff;
+      font-size: 16px;
+      margin-top: 50px;
+      letter-spacing: 0.5px;
+    }
+  </style>
 
-.gallery-item .caption {
-  padding: 15px;
-  color: #333;
-  font-size: 0.95rem;
-  font-style: italic;
-  line-height: 1.5;
-}
-
-/* Footer */
-footer {background:#111; color:white; text-align:center; padding:1rem; margin-top:2rem;}
-</style>
 </head>
 <body>
 
-<header>
-  <h1>Righteous Wearz</h1>
-  <p>Prophetic Covering for the Righteous Remnant</p>
-</header>
+<header>Righteous Wearz</header>
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#about">About</a>
-  <a href="#mission">Mission</a>
-  <a href="#shop">Shop</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#payments">Payments</a>
-  <a href="#contact">Contact</a>
-</nav>
+<section id="founder">
+  <h2>Founder – Clarens “Wiz” McCormick</h2>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>Righteous Wearz is a prophetic covering for the righteous remnant — a brand that recognizes God’s people above all others. When you wear Righteous Wearz, you declare that you are righteous, not wicked, and one who walks in godliness.</p>
-</section>
+  <div class="founder-container">
 
-<section id="mission">
-  <h2>Mission & Vision</h2>
-  <p>Our mission: to feed the hungry, clothe the naked, love our neighbors, and honor God through our work.</p>
-</section>
+    <!-- Founder Image -->
+    <img src="IMG_2908.png" alt="Founder Clarens Wiz McCormick">
 
-<!-- SHOP SECTION -->
-<section id="shop">
-  <h2>Shop</h2>
-  <div class="product-grid">
+    <!-- Founder Story -->
+    <div class="founder-text">
+      <p>
+        Clarens “Wiz” McCormick was born in the poorest city in the streets of Haiti. 
+        Growing up surrounded by poverty, he developed a strong desire to help those in need.
+      </p>
 
-    <div class="product-card">
-      <img id="rwearz-img" src="rwearzblack.jpg" alt="Righteous Wearz Tee">
-      <h3>Righteous Wearz Tee</h3>
-      <p class="price">$35</p>
-      <label for="rwearz-color">Color:</label>
-      <select id="rwearz-color">
-        <option value="black">Black</option>
-        <option value="skyblue">Skyblue</option>
-        <option value="red">Red</option>
-        <option value="white">White</option>
-      </select>
-      <p id="rwearz-sizes">Sizes: M (1), L (1), 2XL (2), 3XL (1)</p>
-    </div>
+      <p>
+        After being adopted to the United States at the age of 7, Wiz was shocked to see 
+        that people in America suffered from poverty as well. His faith in Jesus later 
+        convicted him to start <strong>Righteous Wearz</strong> with the purpose of earning 
+        income to bless the poor and uplift his community.
+      </p>
 
-    <div class="product-card">
-      <img id="logo-img" src="logoblack.jpg" alt="Logo Tee">
-      <h3>Logo Tee</h3>
-      <p class="price">$20</p>
-      <label for="logo-color">Color:</label>
-      <select id="logo-color">
-        <option value="black">Black</option>
-        <option value="blue">Blue</option>
-        <option value="orange">Orange</option>
-      </select>
-      <p id="logo-sizes">Sizes: S (2), S (1), M (1), L (2)</p>
-    </div>
-
-    <div class="product-card">
-      <img id="crew-img" src="crewneckblack.jpg" alt="Crewneck">
-      <h3>Crewneck</h3>
-      <p class="price">$25</p>
-      <label for="crew-color">Color:</label>
-      <select id="crew-color">
-        <option value="black">Black</option>
-        <option value="red">Red</option>
-        <option value="purple">Purple</option>
-        <option value="yellow">Yellow</option>
-      </select>
-      <p id="crew-sizes">Sizes: M, L, XL</p>
-    </div>
-
-    <div class="product-card">
-      <img id="saved-img" src="savedblue.jpg" alt="Saved LS">
-      <h3>Saved Long Sleeve</h3>
-      <p class="price">$25</p>
-      <label for="saved-color">Color:</label>
-      <select id="saved-color">
-        <option value="blue">Blue</option>
-        <option value="red">Red</option>
-      </select>
-      <p id="saved-sizes">Sizes: L (2), L (3), XL (5)</p>
-    </div>
-
-    <div class="product-card">
-      <img id="hoodie-img" src="hoodie.jpg" alt="Hoodie">
-      <h3>Hoodie</h3>
-      <p class="price">$40</p>
-      <p>Sizes: M–2XL</p>
-    </div>
-
-    <div class="product-card">
-      <img src="beanie.jpg" alt="Beanie">
-      <h3>Beanie</h3>
-      <p class="price">$25</p>
-      <p>One Size Fits All</p>
+      <p>
+        Wiz believes that in the Kingdom of God, the greatest are the ones who are humble, 
+        least, and poor. Staying kingdom-minded, his passion is to plead the cause of the 
+        poor and needy—providing clothing, food, and support to those who are often overlooked 
+        but honored in the eyes of God.
+      </p>
     </div>
 
   </div>
 </section>
 
-<!-- GALLERY -->
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery-grid">
-
-    <div class="gallery-item"><img src="erick.jpg" alt="Erick"></div>
-    <div class="gallery-item"><img src="willie.jpg" alt="Willie"></div>
-    <div class="gallery-item"><img src="sonnyback.jpg" alt="Sonny Back"></div>
-    <div class="gallery-item"><img src="jacob.jpg" alt="Jacob"><p class="caption">“You are in the light side. There is a battle between light and darkness, and you have chosen to join the light force. Be you and let your light shine.”</p></div>
-    <div class="gallery-item"><img src="joey.jpg" alt="Joey"></div>
-    <div class="gallery-item"><img src="wiz.jpg" alt="Wiz"><p class="caption">“Blessed are the peacemakers. When you wear Righteous, you are representing peace — a man that seeks peace with God and with others.”</p></div>
-    <div class="gallery-item"><img src="hat.jpg" alt="Hat"></div>
-    <div class="gallery-item"><img src="flynn.jpg" alt="Flynn"></div>
-    <div class="gallery-item"><img src="dickens.jpg" alt="Dickens"><p class="caption">“You’re clothed with power. When you wear Righteous Wearz, you’re carrying your cross to strive with strength to live the godly way. It’s like putting on the power.”</p></div>
-    <div class="gallery-item"><img src="dickenssave.jpg" alt="Dickens Save"></div>
-    <div class="gallery-item"><img src="gym.jpg" alt="Gym"><p class="caption">“This brand is different from other brands because you will know so much about a person wearing Righteous. Though they may look different by physical looks and race, they embody the temple of a godly man.”</p></div>
-
-  </div>
-</section>
-
-<!-- PAYMENTS -->
-<section id="payments" style="background:#eaf3ff; padding:3rem 1rem; border-top:4px solid #3b82f6;">
-  <h2 style="margin-bottom:1rem; color:#111;">Support & Payment Options</h2>
-  <p style="font-size:1.1rem; margin-bottom:2rem; color:#333;">
-    Send payments or donations through your preferred app below:
-  </p>
-
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
-
-    <a href="https://cash.app/$WizmcCormick" target="_blank" style="background:#00C244; color:white; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease;">💵 Cash App</a>
-
-    <a href="https://venmo.com/u/Wiz-McCormick" target="_blank" style="background:#3b82f6; color:white; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease;">📱 Venmo</a>
-
-    <a href="https://paypal.me/thewiz00" target="_blank" style="background:#00457C; color:white; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease;">💳 PayPal</a>
-
-    <a href="mailto:righteouswearz@gmail.com?subject=Apple%20Pay%20Payment" style="background:#111; color:#ffe347; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease;">🍎 Apple Pay</a>
-  </div>
-
-  <p style="margin-top:2rem; font-size:0.95rem; color:#333;">
-    Thank you for supporting <b>Righteous Wearz</b> — every seed sown helps us continue our mission
-    to clothe and uplift the righteous.
-  </p>
-</section>
-
-<footer id="contact">
-  <p>&copy; 2025 Righteous Wearz | All Rights Reserved</p>
+<footer>
+  © 2025 Righteous Wearz — All Rights Reserved
 </footer>
-
-<script>
-const rwearzData = {
-  black: {img:'rwearzblack.jpg', sizes:'M (1), L (1), 2XL (2), 3XL (1)'},
-  skyblue: {img:'rwearzskyblue.jpg', sizes:'M (1), L (1)'},
-  red: {img:'rwearzred.jpg', sizes:'2XL (1)'},
-  white: {img:'rwearzwhite.jpg', sizes:'3XL (1)'}
-};
-document.getElementById('rwearz-color').onchange = function() {
-  const val = this.value;
-  document.getElementById('rwearz-img').src = rwearzData[val].img;
-  document.getElementById('rwearz-sizes').textContent = 'Sizes: ' + rwearzData[val].sizes;
-};
-
-const logoData = {
-  black: {img:'logoblack.jpg', sizes:'S (2), L (2)'},
-  blue: {img:'logoblue.jpg', sizes:'S (1)'},
-  orange: {img:'logoorange.jpg', sizes:'M (1), L (2)'}
-};
-document.getElementById('logo-color').onchange = function() {
-  const val = this.value;
-  document.getElementById('logo-img').src = logoData[val].img;
-  document.getElementById('logo-sizes').textContent = 'Sizes: ' + logoData[val].sizes;
-};
-
-const crewData = {
-  black: {img:'crewneckblack.jpg', sizes:'M, L, XL'},
-  red: {img:'crewneckred.jpg', sizes:'M, XL'},
-  purple: {img:'crewneckpurp.jpg', sizes:'L'},
-  yellow: {img:'crewnecky.jpg', sizes:'M–XL'}
-};
-document.getElementById('crew-color').onchange = function() {
-  const val = this.value;
-  document.getElementById('crew-img').src = crewData[val].img;
-  document.getElementById('crew-sizes').textContent = 'Sizes: ' + crewData[val].sizes;
-};
-
-const savedData = {
-  blue: {img:'savedblue.jpg', sizes:'L (2)'},
-  red: {img:'savedred.jpg', sizes:'L (3), XL (5)'}
-};
-document.getElementById('saved-color').onchange = function() {
-  const val = this.value;
-  document.getElementById('saved-img').src = savedData[val].img;
-  document.getElementById('saved-sizes').textContent = 'Sizes: ' + savedData[val].sizes;
-};
-</script>
 
 </body>
 </html>
