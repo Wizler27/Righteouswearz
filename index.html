@@ -3,119 +3,208 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Righteous Wearz – Founder</title>
-
+  <title>Righteous Wearz</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      color: #333;
     }
 
     header {
-      background: #000;
-      padding: 20px;
-      text-align: center;
+      background-color: #000;
       color: #fff;
-      font-size: 30px;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-
-    /* Founder Section Wrapper */
-    #founder {
-      padding: 50px 20px;
-      background: #fff;
-      max-width: 1100px;
-      margin: 40px auto;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-    }
-
-    #founder h2 {
+      padding: 20px 0;
       text-align: center;
-      font-size: 34px;
-      margin-bottom: 30px;
-      font-weight: 800;
     }
 
-    .founder-container {
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      position: relative;
+      height: 400px;
+      background: url('hero.jpg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+    }
+
+    .section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .founder {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
-      gap: 40px;
+      gap: 20px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    .founder-container img {
-      width: 340px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.20);
+    .founder img {
+      max-width: 300px;
+      border-radius: 10px;
     }
 
     .founder-text {
-      max-width: 600px;
-      font-size: 18px;
-      line-height: 1.7;
+      flex: 1;
     }
 
-    .founder-text p {
-      margin-bottom: 18px;
+    .shop {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .product img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 10px 0;
+    }
+
+    .product p {
+      font-weight: bold;
+    }
+
+    .payment-options {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .payment-options h2 {
+      margin-bottom: 20px;
+    }
+
+    .payment-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .payment-list li {
+      margin: 10px 0;
+      font-size: 1.2em;
     }
 
     footer {
-      text-align: center;
-      padding: 25px;
-      background: #000;
+      background-color: #000;
       color: #fff;
-      font-size: 16px;
+      text-align: center;
+      padding: 20px 0;
       margin-top: 50px;
-      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      .founder {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .founder img {
+        max-width: 100%;
+      }
     }
   </style>
-
 </head>
 <body>
+  <header>
+    <h1>Righteous Wearz</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#founder">Founder</a>
+      <a href="#shop">Shop</a>
+      <a href="#payment">Payment</a>
+    </nav>
+  </header>
 
-<header>Righteous Wearz</header>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <h1>Wear Righteous. Live Empowered.</h1>
+  </section>
 
-<section id="founder">
-  <h2>Founder – Clarens “Wiz” McCormick</h2>
-
-  <div class="founder-container">
-
-    <!-- Founder Image -->
-    <img src="IMG_2908.png" alt="Founder Clarens Wiz McCormick">
-
-    <!-- Founder Story -->
+  <!-- Founder Section -->
+  <section class="section founder" id="founder">
+    <img src="founder.jpg" alt="Clarens Wiz McCormick">
     <div class="founder-text">
+      <h2>Meet Our Founder</h2>
       <p>
-        Clarens “Wiz” McCormick was born in the poorest city in the streets of Haiti. 
-        Growing up surrounded by poverty, he developed a strong desire to help those in need.
-      </p>
-
-      <p>
-        After being adopted to the United States at the age of 7, Wiz was shocked to see 
-        that people in America suffered from poverty as well. His faith in Jesus later 
-        convicted him to start <strong>Righteous Wearz</strong> with the purpose of earning 
-        income to bless the poor and uplift his community.
-      </p>
-
-      <p>
-        Wiz believes that in the Kingdom of God, the greatest are the ones who are humble, 
-        least, and poor. Staying kingdom-minded, his passion is to plead the cause of the 
-        poor and needy—providing clothing, food, and support to those who are often overlooked 
-        but honored in the eyes of God.
+        Clarens Wiz McCormick was born in the poorest city in the streets of Haiti. Growing up seeing the poverty around him, he knew he wanted to help those who are poor. When he got adopted to the U.S. at the age of 7, he was shocked to see poor people suffering in America too. His faith in Jesus convicted him to start Righteous Wearz in hopes of making money to make a difference for the poor and inspire others to live godly lives.
       </p>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- Shop Section -->
+  <section class="section shop" id="shop">
+    <h2>Shop Our Collection</h2>
+    <div class="shop">
+      <div class="product">
+        <img src="righteous_tee.jpg" alt="Righteous Tee">
+        <h3>Righteous Tee</h3>
+        <p>$20</p>
+      </div>
+      <div class="product">
+        <img src="hoodie.jpg" alt="Hoodie">
+        <h3>Righteous Hoodie</h3>
+        <p>$35</p>
+      </div>
+      <div class="product">
+        <img src="beanie.jpg" alt="Beanie">
+        <h3>Righteous Beanie</h3>
+        <p>$25</p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © 2025 Righteous Wearz — All Rights Reserved
-</footer>
+  <!-- Payment Options Section -->
+  <section class="section payment-options" id="payment">
+    <h2>Support & Payment</h2>
+    <ul class="payment-list">
+      <li>Cash App: <strong>$WizmcCormick</strong></li>
+      <li>Venmo: <strong>@Wiz-McCormick</strong></li>
+      <li>PayPal: <strong>@thewiz00</strong></li>
+      <li>Apple Pay: <strong>Available at checkout</strong></li>
+    </ul>
+  </section>
 
+  <footer>
+    &copy; 2025 Righteous Wearz. All Rights Reserved.
+  </footer>
 </body>
 </html>
