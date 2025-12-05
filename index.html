@@ -302,3 +302,13 @@ document.getElementById('crew-color').onchange = function() {
 const savedData = {
   blue: {img:'savedblue.jpg', sizes:'L (2)'},
   red: {img:'savedred.jpg', sizes:'L (3), XL (5)'}
+};
+document.getElementById('saved-color').onchange = function() {
+  const val = this.value;
+  document.getElementById('saved-img').src = savedData[val].img;
+  document.getElementById('saved-sizes').textContent = 'Sizes: ' + savedData[val].sizes;
+};
+</script>
+
+</body>
+</html>
