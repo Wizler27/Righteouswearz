@@ -85,7 +85,7 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
   <a href="#contact">Contact</a>
 </nav>
 
-@@ -184,43 +181,48 @@
+@@ -184,95 +181,100 @@
   </div>
 </section>
 
@@ -156,4 +156,55 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
 </section>
 
 <footer id="contact">
+  <p>&copy; 2025 Righteous Wearz | All Rights Reserved</p>
+</footer>
 
+<script>
+const rwearzData = {
+  black: {img:'rwearzblack.jpg', sizes:'M (1), L (1), 2XL (2), 3XL (1)'},
+  skyblue: {img:'rwearzskyblue.jpg', sizes:'M (1), L (1)'},
+  red: {img:'rwearzred.jpg', sizes:'2XL (1)'},
+  white: {img:'rwearzwhite.jpg', sizes:'3XL (1)'}
+};
+document.getElementById('rwearz-color').onchange = function() {
+  const val = this.value;
+  document.getElementById('rwearz-img').src = rwearzData[val].img;
+  document.getElementById('rwearz-sizes').textContent = 'Sizes: ' + rwearzData[val].sizes;
+};
+
+const logoData = {
+  black: {img:'logoblack.jpg', sizes:'S (2), L (2)'},
+  blue: {img:'logoblue.jpg', sizes:'S (1)'},
+  orange: {img:'logoorange.jpg', sizes:'M (1), L (2)'}
+};
+document.getElementById('logo-color').onchange = function() {
+  const val = this.value;
+  document.getElementById('logo-img').src = logoData[val].img;
+  document.getElementById('logo-sizes').textContent = 'Sizes: ' + logoData[val].sizes;
+};
+
+const crewData = {
+  black: {img:'crewneckblack.jpg', sizes:'M, L, XL'},
+  red: {img:'crewneckred.jpg', sizes:'M, XL'},
+  purple: {img:'crewneckpurp.jpg', sizes:'L'},
+  yellow: {img:'crewnecky.jpg', sizes:'M–XL'}
+};
+document.getElementById('crew-color').onchange = function() {
+  const val = this.value;
+  document.getElementById('crew-img').src = crewData[val].img;
+  document.getElementById('crew-sizes').textContent = 'Sizes: ' + crewData[val].sizes;
+};
+
+const savedData = {
+  blue: {img:'savedblue.jpg', sizes:'L (2)'},
+  red: {img:'savedred.jpg', sizes:'L (3), XL (5)'}
+};
+document.getElementById('saved-color').onchange = function() {
+  const val = this.value;
+  document.getElementById('saved-img').src = savedData[val].img;
+  document.getElementById('saved-sizes').textContent = 'Sizes: ' + savedData[val].sizes;
+};
+</script>
+
+</body>
+</html>
