@@ -41,7 +41,19 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
 #gallery {
   background: #eaf3ff;
   padding: 2rem 1rem 4rem;
-@@ -55,22 +52,18 @@
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -67,7 +79,10 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
   border-bottom: 2px solid #eee;
 }
 
-@@ -81,6 +74,9 @@
+.gallery-item .caption {
+  padding: 15px;
+  color: #333;
+  font-size: 0.95rem;
   font-style: italic;
   line-height: 1.5;
 }
@@ -77,7 +92,15 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
 </style>
 </head>
 <body>
-@@ -96,6 +92,7 @@
+
+<header>
+  <h1>Righteous Wearz</h1>
+  <p>Prophetic Covering for the Righteous Remnant</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#about">About</a>
   <a href="#mission">Mission</a>
   <a href="#shop">Shop</a>
   <a href="#gallery">Gallery</a>
@@ -85,7 +108,88 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
   <a href="#contact">Contact</a>
 </nav>
 
-@@ -184,95 +181,100 @@
+<section id="about">
+  <h2>About Us</h2>
+  <p>Righteous Wearz is a prophetic covering for the righteous remnant — a brand that recognizes God’s people above all others. When you wear Righteous Wearz, you declare that you are righteous, not wicked, and one who walks in godliness.</p>
+</section>
+
+<section id="mission">
+  <h2>Mission & Vision</h2>
+  <p>Our mission: to feed the hungry, clothe the naked, love our neighbors, and honor God through our work.</p>
+</section>
+
+<!-- SHOP SECTION -->
+<section id="shop">
+  <h2>Shop</h2>
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img id="rwearz-img" src="rwearzblack.jpg" alt="Righteous Wearz Tee">
+      <h3>Righteous Wearz Tee</h3>
+      <p class="price">$35</p>
+      <label for="rwearz-color">Color:</label>
+      <select id="rwearz-color">
+        <option value="black">Black</option>
+        <option value="skyblue">Skyblue</option>
+        <option value="red">Red</option>
+        <option value="white">White</option>
+      </select>
+      <p id="rwearz-sizes">Sizes: M (1), L (1), 2XL (2), 3XL (1)</p>
+    </div>
+
+    <div class="product-card">
+      <img id="logo-img" src="logoblack.jpg" alt="Logo Tee">
+      <h3>Logo Tee</h3>
+      <p class="price">$20</p>
+      <label for="logo-color">Color:</label>
+      <select id="logo-color">
+        <option value="black">Black</option>
+        <option value="blue">Blue</option>
+        <option value="orange">Orange</option>
+      </select>
+      <p id="logo-sizes">Sizes: S (2), S (1), M (1), L (2)</p>
+    </div>
+
+    <div class="product-card">
+      <img id="crew-img" src="crewneckblack.jpg" alt="Crewneck">
+      <h3>Crewneck</h3>
+      <p class="price">$25</p>
+      <label for="crew-color">Color:</label>
+      <select id="crew-color">
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="purple">Purple</option>
+        <option value="yellow">Yellow</option>
+      </select>
+      <p id="crew-sizes">Sizes: M, L, XL</p>
+    </div>
+
+    <div class="product-card">
+      <img id="saved-img" src="savedblue.jpg" alt="Saved LS">
+      <h3>Saved Long Sleeve</h3>
+      <p class="price">$25</p>
+      <label for="saved-color">Color:</label>
+      <select id="saved-color">
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+      </select>
+      <p id="saved-sizes">Sizes: L (2), L (3), XL (5)</p>
+    </div>
+
+    <div class="product-card">
+      <img id="hoodie-img" src="hoodie.jpg" alt="Hoodie">
+      <h3>Hoodie</h3>
+      <p class="price">$40</p>
+      <p>Sizes: M–2XL</p>
+    </div>
+
+    <div class="product-card">
+      <img src="beanie.jpg" alt="Beanie">
+      <h3>Beanie</h3>
+      <p class="price">$25</p>
+      <p>One Size Fits All</p>
+    </div>
+
   </div>
 </section>
 
@@ -198,13 +302,3 @@ document.getElementById('crew-color').onchange = function() {
 const savedData = {
   blue: {img:'savedblue.jpg', sizes:'L (2)'},
   red: {img:'savedred.jpg', sizes:'L (3), XL (5)'}
-};
-document.getElementById('saved-color').onchange = function() {
-  const val = this.value;
-  document.getElementById('saved-img').src = savedData[val].img;
-  document.getElementById('saved-sizes').textContent = 'Sizes: ' + savedData[val].sizes;
-};
-</script>
-
-</body>
-</html>
