@@ -30,17 +30,18 @@ section h2 {margin-bottom:1rem;}
 .product-card h3 {margin-bottom:0.5rem;}
 .product-card .price {font-weight:bold; margin-bottom:0.5rem;}
 .product-card img {width:100%; height:250px; object-fit:cover; border-radius:8px; margin-bottom:10px;}
+.product-card img {width:100%; height:auto; max-height:250px; object-fit:contain; border-radius:8px; margin-bottom:10px;}
 .product-card select {padding:5px; margin-bottom:10px;}
 
 /* Footer */
 footer {background:#111; color:white; text-align:center; padding:1rem; margin-top:2rem;}
 
-/* Gallery Section */
 /* ✅ GALLERY SECTION FIXED */
+/* Gallery Section */
 #gallery {
   background: #eaf3ff;
   padding: 2rem 1rem 4rem;
-@@ -55,17 +55,22 @@
+@@ -55,22 +52,18 @@
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -57,92 +58,108 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
 /* 🔧 Fixed so full heads show */
 .gallery-item img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
   height: auto; /* Let image keep full proportions */
   object-fit: contain; /* show full image, no cropping */
   background-color: #f4f4f4; /* subtle background behind non-square images */
+  height: auto;
+  max-height: 350px;
+  object-fit: contain;
   border-bottom: 2px solid #eee;
 }
 
-@@ -109,7 +114,6 @@
-  <h2>Shop</h2>
-  <div class="product-grid">
+@@ -81,6 +74,9 @@
+  font-style: italic;
+  line-height: 1.5;
+}
 
-    <!-- Righteous Wearz Tee -->
-    <div class="product-card">
-      <img id="rwearz-img" src="rwearzblack.jpg" alt="Righteous Wearz Tee">
-      <h3>Righteous Wearz Tee</h3>
-@@ -124,7 +128,6 @@
-      <p id="rwearz-sizes">Sizes: M (1), L (1), 2XL (2), 3XL (1)</p>
-    </div>
+/* Footer */
+footer {background:#111; color:white; text-align:center; padding:1rem; margin-top:2rem;}
+</style>
+</head>
+<body>
+@@ -96,6 +92,7 @@
+  <a href="#mission">Mission</a>
+  <a href="#shop">Shop</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#payments">Payments</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-    <!-- Logo Tee -->
-    <div class="product-card">
-      <img id="logo-img" src="logoblack.jpg" alt="Logo Tee">
-      <h3>Logo Tee</h3>
-@@ -138,7 +141,6 @@
-      <p id="logo-sizes">Sizes: S (2), S (1), M (1), L (2)</p>
-    </div>
-
-    <!-- Crewneck -->
-    <div class="product-card">
-      <img id="crew-img" src="crewneckblack.jpg" alt="Crewneck">
-      <h3>Crewneck</h3>
-@@ -153,7 +155,6 @@
-      <p id="crew-sizes">Sizes: M, L, XL</p>
-    </div>
-
-    <!-- Saved LS -->
-    <div class="product-card">
-      <img id="saved-img" src="savedblue.jpg" alt="Saved LS">
-      <h3>Saved Long Sleeve</h3>
-@@ -166,15 +167,13 @@
-      <p id="saved-sizes">Sizes: L (2), L (3), XL (5)</p>
-    </div>
-
-    <!-- Hoodie -->
-    <div class="product-card">
-      <img id="hoodie-img" src="hoodie.jpg" alt="Hoodie">
-      <h3>Hoodie</h3>
-      <p class="price">$40</p>
-      <p>Sizes: M–2XL</p>
-    </div>
-
-    <!-- Beanie -->
-    <div class="product-card">
-      <img src="beanie.jpg" alt="Beanie">
-      <h3>Beanie</h3>
-@@ -185,15 +184,13 @@
+@@ -184,95 +181,100 @@
   </div>
 </section>
 
-<!-- ✅ GALLERY SECTION (only certain ones have captions) -->
 <!-- ✅ GALLERY SECTION FIXED -->
+<!-- GALLERY -->
 <section id="gallery">
   <h2>Gallery</h2>
   <div class="gallery-grid">
 
     <div class="gallery-item"><img src="erick.jpg" alt="Erick"></div>
-
     <div class="gallery-item"><img src="willie.jpg" alt="Willie"></div>
-
     <div class="gallery-item"><img src="sonnyback.jpg" alt="Sonny Back"></div>
 
     <div class="gallery-item">
-@@ -209,7 +206,6 @@
+      <img src="jacob.jpg" alt="Jacob">
+      <p class="caption">“You are in the light side. There is a battle between light and darkness, and you have chosen to join the light force. Be you and let your light shine.”</p>
     </div>
 
-    <div class="gallery-item"><img src="hat.jpg" alt="Hat"></div>
-
-    <div class="gallery-item"><img src="flynn.jpg" alt="Flynn"></div>
+    <div class="gallery-item"><img src="jacob.jpg" alt="Jacob"><p class="caption">“You are in the light side. There is a battle between light and darkness, and you have chosen to join the light force. Be you and let your light shine.”</p></div>
+    <div class="gallery-item"><img src="joey.jpg" alt="Joey"></div>
 
     <div class="gallery-item">
-@@ -232,52 +228,51 @@
+      <img src="wiz.jpg" alt="Wiz">
+      <p class="caption">“Blessed are the peacemakers. When you wear Righteous, you are representing peace — a man that seeks peace with God and with others.”</p>
+    </div>
+
+    <div class="gallery-item"><img src="wiz.jpg" alt="Wiz"><p class="caption">“Blessed are the peacemakers. When you wear Righteous, you are representing peace — a man that seeks peace with God and with others.”</p></div>
+    <div class="gallery-item"><img src="hat.jpg" alt="Hat"></div>
+    <div class="gallery-item"><img src="flynn.jpg" alt="Flynn"></div>
+    <div class="gallery-item"><img src="dickens.jpg" alt="Dickens"><p class="caption">“You’re clothed with power. When you wear Righteous Wearz, you’re carrying your cross to strive with strength to live the godly way. It’s like putting on the power.”</p></div>
+    <div class="gallery-item"><img src="dickenssave.jpg" alt="Dickens Save"></div>
+    <div class="gallery-item"><img src="gym.jpg" alt="Gym"><p class="caption">“This brand is different from other brands because you will know so much about a person wearing Righteous. Though they may look different by physical looks and race, they embody the temple of a godly man.”</p></div>
+
+    <div class="gallery-item">
+      <img src="dickens.jpg" alt="Dickens">
+      <p class="caption">“You’re clothed with power. When you wear Righteous Wearz, you’re carrying your cross to strive with strength to live the godly way. It’s like putting on the power.”</p>
+    </div>
+  </div>
+</section>
+
+    <div class="gallery-item"><img src="dickenssave.jpg" alt="Dickens Save"></div>
+<!-- PAYMENTS -->
+<section id="payments" style="background:#eaf3ff; padding:3rem 1rem; border-top:4px solid #3b82f6;">
+  <h2 style="margin-bottom:1rem; color:#111;">Support & Payment Options</h2>
+  <p style="font-size:1.1rem; margin-bottom:2rem; color:#333;">
+    Send payments or donations through your preferred app below:
+  </p>
+
+    <div class="gallery-item">
+      <img src="gym.jpg" alt="Gym">
+      <p class="caption">“This brand is different from other brands because you will know so much about a person wearing Righteous. Though they may look different by physical looks and race, they embody the temple of a godly man.”</p>
+    </div>
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+
+    <a href="https://cash.app/$WizmcCormick" target="_blank" style="background:#00C244; color:white; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease;">💵 Cash App</a>
+
+    <a href="https://venmo.com/u/Wiz-McCormick" target="_blank" style="background:#3b82f6; color:white; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease;">📱 Venmo</a>
+
+    <a href="https://paypal.me/thewiz00" target="_blank" style="background:#00457C; color:white; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease;">💳 PayPal</a>
+
+    <a href="mailto:righteouswearz@gmail.com?subject=Apple%20Pay%20Payment" style="background:#111; color:#ffe347; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease;">🍎 Apple Pay</a>
+  </div>
+
+  <p style="margin-top:2rem; font-size:0.95rem; color:#333;">
+    Thank you for supporting <b>Righteous Wearz</b> — every seed sown helps us continue our mission
+    to clothe and uplift the righteous.
+  </p>
+</section>
+
+<footer id="contact">
+  <p>&copy; 2025 Righteous Wearz | All Rights Reserved</p>
 </footer>
 
 <script>
-// Product color & sizes mapping
 const rwearzData = {
   black: {img:'rwearzblack.jpg', sizes:'M (1), L (1), 2XL (2), 3XL (1)'},
   skyblue: {img:'rwearzskyblue.jpg', sizes:'M (1), L (1)'},
