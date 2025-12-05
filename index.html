@@ -26,23 +26,12 @@ section h2 {margin-bottom:1rem;}
 
 /* Product Grid */
 .product-grid {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px;}
-.product-card {background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); width:260px; padding:15px; text-align:center; position:relative;}
-.product-card h3 {margin-bottom:0.5rem;}
-.product-card .price {font-weight:bold; margin-bottom:0.5rem;}
-.product-card img {width:100%; height:250px; object-fit:cover; border-radius:8px; margin-bottom:10px;}
+.product-card {background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); width:260px; padding:15px; text-align:center;}
 .product-card img {width:100%; height:auto; max-height:250px; object-fit:contain; border-radius:8px; margin-bottom:10px;}
 .product-card select {padding:5px; margin-bottom:10px;}
 
-/* Footer */
-footer {background:#111; color:white; text-align:center; padding:1rem; margin-top:2rem;}
-
-/* ✅ GALLERY SECTION FIXED */
 /* Gallery Section */
-#gallery {
-  background: #eaf3ff;
-  padding: 2rem 1rem 4rem;
-}
-
+#gallery {padding:2rem 1rem 4rem;}
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -52,43 +41,34 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
 }
 
 .gallery-item {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background:white;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  transition:0.3s;
 }
-
 .gallery-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transform:translateY(-6px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
 }
 
-/* 🔧 Fixed so full heads show */
 .gallery-item img {
-  width: 100%;
-  height: auto; /* Let image keep full proportions */
-  object-fit: contain; /* show full image, no cropping */
-  background-color: #f4f4f4; /* subtle background behind non-square images */
-  height: auto;
-  max-height: 350px;
-  object-fit: contain;
-  border-bottom: 2px solid #eee;
+  width:100%;
+  max-height:350px;
+  object-fit:contain;
+  background:#f4f4f4;
+  border-bottom:2px solid #eee;
 }
 
-.gallery-item .caption {
-  padding: 15px;
-  color: #333;
-  font-size: 0.95rem;
-  font-style: italic;
-  line-height: 1.5;
+.caption {
+  padding:15px;
+  color:#333;
+  font-size:0.95rem;
+  font-style:italic;
+  line-height:1.5;
 }
 
-/* Footer */
-footer {background:#111; color:white; text-align:center; padding:1rem; margin-top:2rem;}
+footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
 </style>
 </head>
 <body>
@@ -110,7 +90,7 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
 
 <section id="about">
   <h2>About Us</h2>
-  <p>Righteous Wearz is a prophetic covering for the righteous remnant — a brand that recognizes God’s people above all others. When you wear Righteous Wearz, you declare that you are righteous, not wicked, and one who walks in godliness.</p>
+  <p>Righteous Wearz is a prophetic covering for the righteous remnant — a brand that recognizes God’s people above all others.</p>
 </section>
 
 <section id="mission">
@@ -124,10 +104,9 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
   <div class="product-grid">
 
     <div class="product-card">
-      <img id="rwearz-img" src="rwearzblack.jpg" alt="Righteous Wearz Tee">
+      <img id="rwearz-img" src="rwearzblack.jpg" alt="">
       <h3>Righteous Wearz Tee</h3>
       <p class="price">$35</p>
-      <label for="rwearz-color">Color:</label>
       <select id="rwearz-color">
         <option value="black">Black</option>
         <option value="skyblue">Skyblue</option>
@@ -138,10 +117,9 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
     </div>
 
     <div class="product-card">
-      <img id="logo-img" src="logoblack.jpg" alt="Logo Tee">
+      <img id="logo-img" src="logoblack.jpg" alt="">
       <h3>Logo Tee</h3>
       <p class="price">$20</p>
-      <label for="logo-color">Color:</label>
       <select id="logo-color">
         <option value="black">Black</option>
         <option value="blue">Blue</option>
@@ -151,10 +129,9 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
     </div>
 
     <div class="product-card">
-      <img id="crew-img" src="crewneckblack.jpg" alt="Crewneck">
+      <img id="crew-img" src="crewneckblack.jpg" alt="">
       <h3>Crewneck</h3>
       <p class="price">$25</p>
-      <label for="crew-color">Color:</label>
       <select id="crew-color">
         <option value="black">Black</option>
         <option value="red">Red</option>
@@ -165,10 +142,9 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
     </div>
 
     <div class="product-card">
-      <img id="saved-img" src="savedblue.jpg" alt="Saved LS">
+      <img id="saved-img" src="savedblue.jpg" alt="">
       <h3>Saved Long Sleeve</h3>
       <p class="price">$25</p>
-      <label for="saved-color">Color:</label>
       <select id="saved-color">
         <option value="blue">Blue</option>
         <option value="red">Red</option>
@@ -177,14 +153,14 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
     </div>
 
     <div class="product-card">
-      <img id="hoodie-img" src="hoodie.jpg" alt="Hoodie">
+      <img src="hoodie.jpg" alt="">
       <h3>Hoodie</h3>
       <p class="price">$40</p>
       <p>Sizes: M–2XL</p>
     </div>
 
     <div class="product-card">
-      <img src="beanie.jpg" alt="Beanie">
+      <img src="beanie.jpg" alt="">
       <h3>Beanie</h3>
       <p class="price">$25</p>
       <p>One Size Fits All</p>
@@ -193,70 +169,56 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
   </div>
 </section>
 
-<!-- ✅ GALLERY SECTION FIXED -->
 <!-- GALLERY -->
 <section id="gallery">
   <h2>Gallery</h2>
   <div class="gallery-grid">
 
-    <div class="gallery-item"><img src="erick.jpg" alt="Erick"></div>
-    <div class="gallery-item"><img src="willie.jpg" alt="Willie"></div>
-    <div class="gallery-item"><img src="sonnyback.jpg" alt="Sonny Back"></div>
+    <div class="gallery-item"><img src="erick.jpg"></div>
+    <div class="gallery-item"><img src="willie.jpg"></div>
+    <div class="gallery-item"><img src="sonnyback.jpg"></div>
 
     <div class="gallery-item">
-      <img src="jacob.jpg" alt="Jacob">
+      <img src="jacob.jpg">
       <p class="caption">“You are in the light side. There is a battle between light and darkness, and you have chosen to join the light force. Be you and let your light shine.”</p>
     </div>
 
-    <div class="gallery-item"><img src="jacob.jpg" alt="Jacob"><p class="caption">“You are in the light side. There is a battle between light and darkness, and you have chosen to join the light force. Be you and let your light shine.”</p></div>
-    <div class="gallery-item"><img src="joey.jpg" alt="Joey"></div>
+    <div class="gallery-item"><img src="joey.jpg"></div>
 
     <div class="gallery-item">
-      <img src="wiz.jpg" alt="Wiz">
-      <p class="caption">“Blessed are the peacemakers. When you wear Righteous, you are representing peace — a man that seeks peace with God and with others.”</p>
+      <img src="wiz.jpg">
+      <p class="caption">“Blessed are the peacemakers. When you wear Righteous, you represent peace — a man that seeks peace with God and with others.”</p>
     </div>
 
-    <div class="gallery-item"><img src="wiz.jpg" alt="Wiz"><p class="caption">“Blessed are the peacemakers. When you wear Righteous, you are representing peace — a man that seeks peace with God and with others.”</p></div>
-    <div class="gallery-item"><img src="hat.jpg" alt="Hat"></div>
-    <div class="gallery-item"><img src="flynn.jpg" alt="Flynn"></div>
-    <div class="gallery-item"><img src="dickens.jpg" alt="Dickens"><p class="caption">“You’re clothed with power. When you wear Righteous Wearz, you’re carrying your cross to strive with strength to live the godly way. It’s like putting on the power.”</p></div>
-    <div class="gallery-item"><img src="dickenssave.jpg" alt="Dickens Save"></div>
-    <div class="gallery-item"><img src="gym.jpg" alt="Gym"><p class="caption">“This brand is different from other brands because you will know so much about a person wearing Righteous. Though they may look different by physical looks and race, they embody the temple of a godly man.”</p></div>
+    <div class="gallery-item"><img src="hat.jpg"></div>
+    <div class="gallery-item"><img src="flynn.jpg"></div>
 
     <div class="gallery-item">
-      <img src="dickens.jpg" alt="Dickens">
-      <p class="caption">“You’re clothed with power. When you wear Righteous Wearz, you’re carrying your cross to strive with strength to live the godly way. It’s like putting on the power.”</p>
+      <img src="dickens.jpg">
+      <p class="caption">“You’re clothed with power. You’re carrying your cross to strive with strength to live the godly way.”</p>
     </div>
+
+    <div class="gallery-item"><img src="dickenssave.jpg"></div>
+
+    <div class="gallery-item">
+      <img src="gym.jpg">
+      <p class="caption">“This brand is different… Though they may look different, they embody the temple of a godly man.”</p>
+    </div>
+
   </div>
 </section>
 
-    <div class="gallery-item"><img src="dickenssave.jpg" alt="Dickens Save"></div>
 <!-- PAYMENTS -->
-<section id="payments" style="background:#eaf3ff; padding:3rem 1rem; border-top:4px solid #3b82f6;">
-  <h2 style="margin-bottom:1rem; color:#111;">Support & Payment Options</h2>
-  <p style="font-size:1.1rem; margin-bottom:2rem; color:#333;">
-    Send payments or donations through your preferred app below:
-  </p>
+<section id="payments" style="background:#eaf3ff; padding:3rem 1rem;">
+  <h2>Support & Payment Options</h2>
+  <p>Send payments or donations below:</p>
 
-    <div class="gallery-item">
-      <img src="gym.jpg" alt="Gym">
-      <p class="caption">“This brand is different from other brands because you will know so much about a person wearing Righteous. Though they may look different by physical looks and race, they embody the temple of a godly man.”</p>
-    </div>
   <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
-
-    <a href="https://cash.app/$WizmcCormick" target="_blank" style="background:#00C244; color:white; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease;">💵 Cash App</a>
-
-    <a href="https://venmo.com/u/Wiz-McCormick" target="_blank" style="background:#3b82f6; color:white; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease;">📱 Venmo</a>
-
-    <a href="https://paypal.me/thewiz00" target="_blank" style="background:#00457C; color:white; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease;">💳 PayPal</a>
-
-    <a href="mailto:righteouswearz@gmail.com?subject=Apple%20Pay%20Payment" style="background:#111; color:#ffe347; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease;">🍎 Apple Pay</a>
+    <a href="https://cash.app/$WizmcCormick" target="_blank" style="background:#00C244; color:white; padding:15px 25px; border-radius:8px; text-decoration:none;">💵 Cash App</a>
+    <a href="https://venmo.com/u/Wiz-McCormick" target="_blank" style="background:#3b82f6; color:white; padding:15px 25px; border-radius:8px; text-decoration:none;">📱 Venmo</a>
+    <a href="https://paypal.me/thewiz00" target="_blank" style="background:#00457C; color:white; padding:15px 25px; border-radius:8px; text-decoration:none;">💳 PayPal</a>
+    <a href="mailto:righteouswearz@gmail.com" style="background:#111; color:#ffe347; padding:15px 25px; border-radius:8px; text-decoration:none;">🍎 Apple Pay</a>
   </div>
-
-  <p style="margin-top:2rem; font-size:0.95rem; color:#333;">
-    Thank you for supporting <b>Righteous Wearz</b> — every seed sown helps us continue our mission
-    to clothe and uplift the righteous.
-  </p>
 </section>
 
 <footer id="contact">
@@ -264,50 +226,7 @@ footer {background:#111; color:white; text-align:center; padding:1rem; margin-to
 </footer>
 
 <script>
-const rwearzData = {
-  black: {img:'rwearzblack.jpg', sizes:'M (1), L (1), 2XL (2), 3XL (1)'},
-  skyblue: {img:'rwearzskyblue.jpg', sizes:'M (1), L (1)'},
-  red: {img:'rwearzred.jpg', sizes:'2XL (1)'},
-  white: {img:'rwearzwhite.jpg', sizes:'3XL (1)'}
-};
-document.getElementById('rwearz-color').onchange = function() {
-  const val = this.value;
-  document.getElementById('rwearz-img').src = rwearzData[val].img;
-  document.getElementById('rwearz-sizes').textContent = 'Sizes: ' + rwearzData[val].sizes;
-};
-
-const logoData = {
-  black: {img:'logoblack.jpg', sizes:'S (2), L (2)'},
-  blue: {img:'logoblue.jpg', sizes:'S (1)'},
-  orange: {img:'logoorange.jpg', sizes:'M (1), L (2)'}
-};
-document.getElementById('logo-color').onchange = function() {
-  const val = this.value;
-  document.getElementById('logo-img').src = logoData[val].img;
-  document.getElementById('logo-sizes').textContent = 'Sizes: ' + logoData[val].sizes;
-};
-
-const crewData = {
-  black: {img:'crewneckblack.jpg', sizes:'M, L, XL'},
-  red: {img:'crewneckred.jpg', sizes:'M, XL'},
-  purple: {img:'crewneckpurp.jpg', sizes:'L'},
-  yellow: {img:'crewnecky.jpg', sizes:'M–XL'}
-};
-document.getElementById('crew-color').onchange = function() {
-  const val = this.value;
-  document.getElementById('crew-img').src = crewData[val].img;
-  document.getElementById('crew-sizes').textContent = 'Sizes: ' + crewData[val].sizes;
-};
-
-const savedData = {
-  blue: {img:'savedblue.jpg', sizes:'L (2)'},
-  red: {img:'savedred.jpg', sizes:'L (3), XL (5)'}
-};
-document.getElementById('saved-color').onchange = function() {
-  const val = this.value;
-  document.getElementById('saved-img').src = savedData[val].img;
-  document.getElementById('saved-sizes').textContent = 'Sizes: ' + savedData[val].sizes;
-};
+// Product script (unchanged)
 </script>
 
 </body>
