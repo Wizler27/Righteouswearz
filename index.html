@@ -13,11 +13,16 @@
       color: #333;
     }
 
+    /* Header */
     header {
-      background-color: #000;
+      background-color: #0044cc; /* Blue header */
       color: #fff;
       padding: 20px 0;
       text-align: center;
+    }
+
+    nav {
+      margin-top: 10px;
     }
 
     nav a {
@@ -31,6 +36,7 @@
       text-decoration: underline;
     }
 
+    /* Hero */
     .hero {
       position: relative;
       height: 400px;
@@ -48,12 +54,27 @@
       padding: 20px;
     }
 
+    /* Sections */
     .section {
       padding: 50px 20px;
       max-width: 1000px;
       margin: auto;
     }
 
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Founder */
     .founder {
       display: flex;
       flex-wrap: wrap;
@@ -74,9 +95,10 @@
       flex: 1;
     }
 
+    /* Shop */
     .shop {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
     }
 
@@ -88,9 +110,40 @@
       text-align: center;
     }
 
-    .product img {
+    .slideshow-container {
+      position: relative;
       max-width: 100%;
+      margin: auto;
+    }
+
+    .slides {
+      display: none;
+      width: 100%;
       border-radius: 10px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 8px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
     }
 
     .product h3 {
@@ -101,6 +154,7 @@
       font-weight: bold;
     }
 
+    /* Payment */
     .payment-options {
       background-color: #fff;
       padding: 30px;
@@ -123,6 +177,7 @@
       font-size: 1.2em;
     }
 
+    /* Footer */
     footer {
       background-color: #000;
       color: #fff;
@@ -131,6 +186,7 @@
       margin-top: 50px;
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
       .founder {
         flex-direction: column;
@@ -144,10 +200,13 @@
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>Righteous Wearz</h1>
+    <h1>Prophetic Covering for the Righteous Remnant</h1>
     <nav>
       <a href="#hero">Home</a>
+      <a href="#gallery">Gallery</a>
       <a href="#founder">Founder</a>
       <a href="#shop">Shop</a>
       <a href="#payment">Payment</a>
@@ -159,13 +218,24 @@
     <h1>Wear Righteous. Live Empowered.</h1>
   </section>
 
+  <!-- Gallery Section -->
+  <section class="section gallery" id="gallery">
+    <h2>Our Gallery</h2>
+    <div class="gallery-grid">
+      <img src="gym.jpg" alt="Gym Design">
+      <img src="jacob.jpg" alt="Jacob Design">
+      <img src="dickens.jpg" alt="Dickens Design">
+      <!-- Add more images as needed -->
+    </div>
+  </section>
+
   <!-- Founder Section -->
   <section class="section founder" id="founder">
     <img src="founder.jpg" alt="Clarens Wiz McCormick">
     <div class="founder-text">
       <h2>Meet Our Founder</h2>
       <p>
-        Clarens Wiz McCormick was born in the poorest city in the streets of Haiti. Growing up seeing the poverty around him, he knew he wanted to help those who are poor. When he got adopted to the U.S. at the age of 7, he was shocked to see poor people suffering in America too. His faith in Jesus convicted him to start Righteous Wearz in hopes of making money to make a difference for the poor and inspire others to live godly lives.
+        Clarens Wiz McCormick was born in the poorest city in the streets of Haiti. Growing up seeing the poverty around him. He knew he wanted to help those who are poor. When he got adopted to U.S at the age of 7 he was shocked to see poor people suffering in America too. His faith in Jesus convicted him to start Righteous Wearz in hopes of making money to make a difference for the poor and in.
       </p>
     </div>
   </section>
@@ -173,23 +243,44 @@
   <!-- Shop Section -->
   <section class="section shop" id="shop">
     <h2>Shop Our Collection</h2>
-    <div class="shop">
-      <div class="product">
-        <img src="righteous_tee.jpg" alt="Righteous Tee">
-        <h3>Righteous Tee</h3>
-        <p>$20</p>
+
+    <!-- Product 1: Righteous Tee -->
+    <div class="product">
+      <h3>Righteous Tee</h3>
+      <div class="slideshow-container">
+        <img class="slides" src="righteous_tee1.jpg" alt="Righteous Tee 1">
+        <img class="slides" src="righteous_tee2.jpg" alt="Righteous Tee 2">
+        <img class="slides" src="righteous_tee3.jpg" alt="Righteous Tee 3">
+        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
       </div>
-      <div class="product">
-        <img src="hoodie.jpg" alt="Hoodie">
-        <h3>Righteous Hoodie</h3>
-        <p>$35</p>
-      </div>
-      <div class="product">
-        <img src="beanie.jpg" alt="Beanie">
-        <h3>Righteous Beanie</h3>
-        <p>$25</p>
-      </div>
+      <p>$20</p>
     </div>
+
+    <!-- Product 2: Hoodie -->
+    <div class="product">
+      <h3>Righteous Hoodie</h3>
+      <div class="slideshow-container">
+        <img class="slides" src="hoodie1.jpg" alt="Hoodie 1">
+        <img class="slides" src="hoodie2.jpg" alt="Hoodie 2">
+        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+      </div>
+      <p>$35</p>
+    </div>
+
+    <!-- Product 3: Beanie -->
+    <div class="product">
+      <h3>Righteous Beanie</h3>
+      <div class="slideshow-container">
+        <img class="slides" src="beanie1.jpg" alt="Beanie 1">
+        <img class="slides" src="beanie2.jpg" alt="Beanie 2">
+        <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+      </div>
+      <p>$25</p>
+    </div>
+
   </section>
 
   <!-- Payment Options Section -->
@@ -206,5 +297,32 @@
   <footer>
     &copy; 2025 Righteous Wearz. All Rights Reserved.
   </footer>
+
+  <!-- Slideshow Script -->
+  <script>
+    var slideIndexes = [1,1,1];
+    var slideId = ["slides", "slides", "slides"];
+    showSlides(1, 0);
+    showSlides(1, 1);
+    showSlides(1, 2);
+
+    function plusSlides(n, no) {
+      showSlides(slideIndexes[no] += n, no);
+    }
+
+    function showSlides(n, no) {
+      var i;
+      var x = document.getElementsByClassName("slides");
+      // calculate start index
+      var start = no*3;
+      for (i = 0; i < 3; i++) {
+        x[start+i].style.display = "none";
+      }
+      var totalSlides = 3; 
+      if(n > totalSlides) {slideIndexes[no] = 1}
+      if(n < 1) {slideIndexes[no] = totalSlides}
+      x[start+slideIndexes[no]-1].style.display = "block";
+    }
+  </script>
 </body>
 </html>
