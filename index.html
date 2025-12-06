@@ -71,7 +71,7 @@ footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
 <div class="product-grid">
 
 <!-- Righteous Wearz Tee -->
-<div class="product-card" data-images='{"Black":"rwearzblack.jpg","Sky Blue":"rweazblue.jpg","Red":"rwearzred.jpg","White":"rwearzwhite.jpg"}'>
+<div class="product-card" data-images='{"Black":"rwearzblack.jpg","Sky Blue":"rwearzblue.jpg","Red":"rwearzred.jpg","White":"rwearzwhite.jpg"}'>
   <img src="rwearzblack.jpg" class="product-main">
   <h3>Righteous Wearz Tee</h3>
   <p class="price">$35</p>
@@ -92,7 +92,7 @@ footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
 </div>
 
 <!-- Crewneck -->
-<div class="product-card" data-images='{"Black":"crewneckblack.jpg","Red":"crewneckred.jpg","Purple":"crewneckpurp.jpg","Yellow":"crewneckyellow.jpg"}'>
+<div class="product-card" data-images='{"Black":"crewneckblack.jpg","Red":"crewneckred.jpg","Purple":"crewneckpurp.jpg","Yellow":"crewnecky.jpg"}'>
   <img src="crewneckblack.jpg" class="product-main">
   <h3>Crewneck</h3>
   <p class="price">$25</p>
@@ -148,7 +148,7 @@ Include the <b>product, color, size, and quantity</b> in your payment note/memo 
 </footer>
 
 <script>
-// Image change on color select
+// Change product image on color select
 document.querySelectorAll('.product-card').forEach(card => {
     const images = JSON.parse(card.getAttribute('data-images'));
     const img = card.querySelector('.product-main');
@@ -169,7 +169,6 @@ document.querySelectorAll('.product-card').forEach(card => {
         const quantity = card.querySelector('.quantity-input').value;
         const orderMessage = `Order: ${productName}, Color: ${color}, Size: ${size}, Quantity: ${quantity}`;
         document.getElementById('order-summary').innerText = orderMessage + "\nCopy this info and include it in your payment note/memo!";
-        // Scroll to payments section
         document.getElementById('payments').scrollIntoView({behavior:"smooth"});
     });
 });
