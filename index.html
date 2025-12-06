@@ -5,182 +5,261 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Righteous Wearz</title>
 <style>
-* {margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
-body {background:#f4f4f4; color:#222; text-align:center;}
-header {background:#3b82f6; color:white; padding:2rem 1rem;}
-header h1 {font-size:2.2rem; margin-bottom:0.5rem;}
-header p {font-size:1.1rem;}
-nav {display:flex; justify-content:center; background:#111; flex-wrap:wrap;}
-nav a {color:white; padding:0.8rem 1.2rem; text-decoration:none; font-weight:bold;}
-nav a:hover {background:#333;}
-section {padding:2rem 1rem;}
-section h2 {margin-bottom:1rem;}
-#mission {background:#ffe347; color:#222;}
-#gallery {background:#eaf3ff;}
-.product-grid {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px;}
-.product-card {background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); width:260px; padding:15px; text-align:center; position:relative; overflow:hidden;}
-.product-card img {width:100%; height:auto; max-height:250px; object-fit:contain; border-radius:8px; margin-bottom:10px;}
-.product-card select, .product-card input {padding:5px; margin-bottom:10px; width:100%;}
-.product-card .submit-order {display:inline-block; padding:10px 20px; background:#3b82f6; color:white; text-decoration:none; border-radius:8px; margin-top:10px; cursor:pointer;}
-.product-card .submit-order:hover {background:#2563eb;}
-#gallery {padding:2rem 1rem 4rem;}
-.gallery-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto;}
-.gallery-item {background:white; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
-.gallery-item img {width:100%; max-height:350px; object-fit:contain; background:#f4f4f4; border-bottom:2px solid #eee;}
-.caption {padding:15px; color:#333; font-size:0.95rem; font-style:italic; line-height:1.5;}
-#founder {background:#fff; padding:3rem 1rem; position:relative;}
-.founder-container {max-width: 900px; margin:auto; background:white; padding:40px; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.1); text-align:center;}
-.founder-container h2 {margin-bottom:30px; font-size:32px; letter-spacing:1px;}
-.founder-container img {width:260px; height:260px; object-fit:cover; border-radius:50%; box-shadow:0 0 10px rgba(0,0,0,0.3); margin-bottom:20px;}
-.founder-container .bio {font-size:18px; line-height:1.6; white-space:pre-line;}
-#back-to-top {position: fixed; bottom:25px; right:25px; display:none; background:#3b82f6; color:white; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:bold; z-index:1000;}
-#back-to-top:hover {background:#2563eb;}
-footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+
+/* HEADER */
+header {
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 26px;
+}
+
+/* SHOP SECTION */
+#shop {
+    padding: 30px;
+    background: white;
+}
+
+h2.section-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.color-select, .size-select, .quantity-input {
+    width: 90%;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.submit-order {
+    margin-top: 12px;
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ORDER SUMMARY */
+#orderSummary {
+    background: #fafafa;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 2px solid #222;
+}
+
+#payment {
+    padding: 30px;
+    background: white;
+}
+
+/* FOUNDER SECTION */
+#founder {
+    padding: 30px;
+    background: #fff;
+}
+
+#founder img {
+    width: 180px;
+    border-radius: 12px;
+    display: block;
+    margin: auto;
+}
+
+#founder .bio {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
 </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Righteous Wearz</h1>
-  <p>Prophetic Covering for the Righteous Remnant</p>
-</header>
+<header>Righteous Wearz</header>
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#about">About</a>
-  <a href="#mission">Mission</a>
-  <a href="#shop">Shop</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#founder">Founder</a>
-  <a href="#payments">Payments</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section id="about">
-  <h2>About Us</h2>
-  <p>Righteous wearz is a prophetic covering for the righteous remnant. The brand speaks for itself. When you wear righteous wearz we want people to know immediately where you stand. That you love God, desire to live godly, that you desire peace with others and that you’re not here to cause trouble. No matter what tribe, nation or tongues you’re from people wont judge u based off outward appearances but that in the inside you are a righteous person.</p>
-</section>
-
-<section id="mission">
-  <h2>Mission & Vision</h2>
-  <p>Our mission: to feed the hungry, clothe the naked, love our neighbors, and honor God through our work.</p>
-</section>
-
+<!-- SHOP -->
 <section id="shop">
-<h2>Shop</h2>
-<div class="product-grid">
+<h2 class="section-title">Shop</h2>
 
-<!-- Righteous Wearz Tee -->
-<div class="product-card" data-images='{"Black":"rwearzblack.jpg","Sky Blue":"rwearzblue.jpg","Red":"rwearzred.jpg","White":"rwearzwhite.jpg"}'>
-  <img src="rwearzblack.jpg" class="product-main">
-  <h3>Righteous Wearz Tee</h3>
-  <p class="price">$35</p>
-  <select class="color-select">
-    <option>Black</option>
-    <option>Sky Blue</option>
-    <option>Red</option>
-    <option>White</option>
-  </select>
-  <select class="size-select">
-    <option>M (1)</option>
-    <option>L (1)</option>
-    <option>2XL (2)</option>
-    <option>3XL (1)</option>
-  </select>
-  <input type="number" class="quantity-input" placeholder="Quantity" min="1" value="1">
-  <div class="submit-order">Submit Order</div>
-</div>
+<div class="shop-grid">
 
-<!-- Crewneck -->
-<div class="product-card" data-images='{"Black":"crewneckblack.jpg","Red":"crewneckred.jpg","Purple":"crewneckpurp.jpg","Yellow":"crewnecky.jpg"}'>
-  <img src="crewneckblack.jpg" class="product-main">
-  <h3>Crewneck</h3>
-  <p class="price">$25</p>
-  <select class="color-select">
-    <option>Black</option>
-    <option>Red</option>
-    <option>Purple</option>
-    <option>Yellow</option>
-  </select>
-  <select class="size-select">
-    <option>M</option>
-    <option>L</option>
-    <option>XL</option>
-  </select>
-  <input type="number" class="quantity-input" placeholder="Quantity" min="1" value="1">
-  <div class="submit-order">Submit Order</div>
-</div>
+    <!-- RIGHTEOUS WEARZ TEE -->
+    <div class="product-card" 
+    data-images='{
+        "Black":"rwearzblack.jpg",
+        "Sky Blue":"rwearzblue.jpg",
+        "Red":"rwearzred.jpg",
+        "White":"rwearzwhite.jpg"
+    }'>
+        <img src="rwearzblack.jpg" class="product-main">
+        <h3>Righteous Wearz Tee</h3>
+        <p class="price">$20</p>
 
-<!-- Hoodie -->
-<div class="product-card" data-images='{"Default":"hoodie.jpg"}'>
-  <img src="hoodie.jpg" class="product-main">
-  <h3>Hoodie</h3>
-  <p class="price">$40</p>
-  <select class="size-select">
-    <option>M</option>
-    <option>L</option>
-    <option>XL</option>
-    <option>2XL</option>
-  </select>
-  <input type="number" class="quantity-input" placeholder="Quantity" min="1" value="1">
-  <div class="submit-order">Submit Order</div>
-</div>
+        <select class="color-select">
+            <option>Black</option>
+            <option>Sky Blue</option>
+            <option>Red</option>
+            <option>White</option>
+        </select>
+
+        <select class="size-select">
+            <option>S (3)</option>
+            <option>M (4)</option>
+            <option>L (2)</option>
+        </select>
+
+        <input type="number" class="quantity-input" value="1" min="1">
+        <div class="submit-order">Submit Order</div>
+    </div>
+
+    <!-- LOGO TEE -->
+    <div class="product-card"
+    data-images='{
+        "Black":"logoblack.jpg",
+        "Blue":"logoblue.jpg",
+        "Orange":"logoorange.jpg"
+    }'>
+        <img src="logoblack.jpg" class="product-main">
+        <h3>Logo Tee</h3>
+        <p class="price">$20</p>
+
+        <select class="color-select">
+            <option>Black</option>
+            <option>Blue</option>
+            <option>Orange</option>
+        </select>
+
+        <select class="size-select">
+            <option>S (2)</option>
+            <option>M (1)</option>
+            <option>L (2)</option>
+        </select>
+
+        <input type="number" class="quantity-input" value="1" min="1">
+        <div class="submit-order">Submit Order</div>
+    </div>
+
+    <!-- CREWNECK -->
+    <div class="product-card"
+    data-images='{
+        "Black":"crewneckblack.jpg",
+        "Red":"crewneckred.jpg",
+        "Purple":"crewneckpurp.jpg",
+        "Yellow":"crewnecky.jpg"
+    }'>
+        <img src="crewneckblack.jpg" class="product-main">
+        <h3>Crewneck</h3>
+        <p class="price">$35</p>
+
+        <select class="color-select">
+            <option>Black</option>
+            <option>Red</option>
+            <option>Purple</option>
+            <option>Yellow</option>
+        </select>
+
+        <select class="size-select">
+            <option>S (1)</option>
+            <option>M (2)</option>
+            <option>L (2)</option>
+        </select>
+
+        <input type="number" class="quantity-input" value="1" min="1">
+        <div class="submit-order">Submit Order</div>
+    </div>
 
 </div>
 </section>
 
-<!-- PAYMENTS -->
-<section id="payments" style="background:#eaf3ff; padding:3rem 1rem;">
-<h2>Support & Payment Options</h2>
-<p>Please send your payment using one of the options below.<br>
-Include the <b>product, color, size, and quantity</b> in your payment note/memo so we know what to send you.</p>
-<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
-  <a href="https://cash.app/$WizmcCormick" target="_blank" style="background:#00C244; color:white; padding:15px 25px; border-radius:8px; text-decoration:none;">💵 Cash App</a>
-  <a href="https://venmo.com/u/Wiz-McCormick" target="_blank" style="background:#3b82f6; color:white; padding:15px 25px; border-radius:8px; text-decoration:none;">📱 Venmo</a>
-  <a href="https://paypal.me/thewiz00" target="_blank" style="background:#00457C; color:white; padding:15px 25px; border-radius:8px; text-decoration:none;">💳 PayPal</a>
-  <a href="mailto:righteouswearz@gmail.com" style="background:#111; color:#ffe347; padding:15px 25px; border-radius:8px; text-decoration:none;">🍎 Apple Pay</a>
-</div>
-<div id="order-summary" style="margin-top:20px; font-weight:bold; color:#222;"></div>
+<!-- ORDER SUMMARY -->
+<section id="orderSummary">
+<h2>Your Order</h2>
+<p id="orderText">No order yet.</p>
 </section>
 
-<footer id="contact">
-<p>&copy; 2025 Righteous Wearz | All Rights Reserved</p>
-</footer>
+<!-- PAYMENT -->
+<section id="payment">
+<h2>Payment Options</h2>
+
+<p><b>Cash App:</b> $WizmcCormick</p>
+<p><b>Venmo:</b> @Wiz-McCormick</p>
+<p><b>PayPal:</b> @thewiz00</p>
+
+<p style="margin-top:20px; font-weight:bold;">
+Please include: product name, size, color, and quantity in the payment notes.
+</p>
+</section>
+
+<!-- FOUNDER SECTION -->
+<section id="founder">
+<h2 class="section-title">Founder</h2>
+
+<img src="founder.jpg" alt="Founder">
+
+<div class="bio">
+<p>
+Clarens Wiz McCormick was born in the poorest city in Haiti. His heart for the poor and his faith in Jesus inspired him to create Righteous Wearz — a brand designed to help those in need and spread light through fashion.
+</p>
+</div>
+</section>
 
 <script>
-// Change product image on color select
-document.querySelectorAll('.product-card').forEach(card => {
-    const images = JSON.parse(card.getAttribute('data-images'));
-    const img = card.querySelector('.product-main');
-    const colorSelect = card.querySelector('.color-select');
-    if(colorSelect){
-        colorSelect.addEventListener('change', () => {
-            const color = colorSelect.value;
-            if(images[color]) img.src = images[color];
-        });
-    }
+// Color switching and order form
+document.querySelectorAll(".product-card").forEach(card => {
+    const img = card.querySelector(".product-main");
+    const images = JSON.parse(card.getAttribute("data-images"));
+    const colorSelect = card.querySelector(".color-select");
+    const submitBtn = card.querySelector(".submit-order");
 
-    // Order form submit
-    const submitBtn = card.querySelector('.submit-order');
-    submitBtn.addEventListener('click', () => {
-        const productName = card.querySelector('h3').innerText;
-        const color = colorSelect ? colorSelect.value : "Default";
-        const size = card.querySelector('.size-select') ? card.querySelector('.size-select').value : "N/A";
-        const quantity = card.querySelector('.quantity-input').value;
-        const orderMessage = `Order: ${productName}, Color: ${color}, Size: ${size}, Quantity: ${quantity}`;
-        document.getElementById('order-summary').innerText = orderMessage + "\nCopy this info and include it in your payment note/memo!";
-        document.getElementById('payments').scrollIntoView({behavior:"smooth"});
+    colorSelect.addEventListener("change", () => {
+        let selectedColor = colorSelect.value;
+        img.src = images[selectedColor];
     });
-});
 
-// Back to Top
-const backToTop = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
-  backToTop.style.display = window.scrollY > 300 ? 'inline-block' : 'none';
-});
-backToTop.addEventListener('click', e => {
-  e.preventDefault();
-  window.scrollTo({top:0, behavior:'smooth'});
+    submitBtn.addEventListener("click", () => {
+        let product = card.querySelector("h3").innerText;
+        let color = card.querySelector(".color-select").value;
+        let size = card.querySelector(".size-select").value;
+        let qty = card.querySelector(".quantity-input").value;
+        let price = card.querySelector(".price").innerText;
+
+        document.getElementById("orderText").innerText = 
+            `Product: ${product}
+             | Color: ${color}
+             | Size: ${size}
+             | Quantity: ${qty}
+             | Price: ${price}`;
+
+        window.location = "#payment";
+    });
 });
 </script>
 
