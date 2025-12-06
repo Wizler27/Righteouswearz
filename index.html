@@ -28,20 +28,9 @@ section h2 {margin-bottom:1rem;}
 .product-grid {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px;}
 .product-card {background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); width:260px; padding:15px; text-align:center; position:relative; overflow:hidden;}
 .product-card img {width:100%; height:auto; max-height:250px; object-fit:contain; border-radius:8px; margin-bottom:10px;}
-.product-card select {padding:5px; margin-bottom:10px;}
-.product-card button {background:#3b82f6; color:white; border:none; padding:10px 20px; border-radius:6px; font-weight:bold; cursor:pointer;}
+.product-card select {padding:5px; margin-bottom:10px; width:100%;}
+.product-card button {background:#3b82f6; color:white; border:none; padding:10px 20px; border-radius:6px; font-weight:bold; cursor:pointer; width:100%;}
 .product-card button:hover {background:#2563eb;}
-
-/* Slideshow */
-.slideshow-container {position:relative;}
-.product-slide {width:100%; height:250px; object-fit:contain; border-radius:8px; transition: opacity 0.5s;}
-.prev-slide, .next-slide {
-  position:absolute; top:50%; transform:translateY(-50%);
-  background:rgba(0,0,0,0.5); color:white; border:none; padding:5px 10px; font-size:18px; cursor:pointer; border-radius:5px;
-}
-.prev-slide {left:5px;}
-.next-slide {right:5px;}
-.prev-slide:hover, .next-slide:hover {background:rgba(0,0,0,0.7);}
 
 /* Gallery Section */
 #gallery {padding:2rem 1rem 4rem;}
@@ -147,138 +136,97 @@ footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
   <h2>Shop</h2>
   <div class="product-grid">
 
-<!-- Righteous Wearz Tee -->
-<div class="product-card">
-  <div class="slideshow-container" data-images='["rwearzblack.jpg","rwearzskyblue.jpg","rwearzred.jpg","rwearzwhite.jpg"]'>
-    <img src="rwearzblack.jpg" class="product-slide" style="opacity:1;">
-    <button class="prev-slide">&#10094;</button>
-    <button class="next-slide">&#10095;</button>
-  </div>
+<!-- Product Template -->
+<div class="product-card" data-images='["rwearzblack.jpg","rwearzskyblue.jpg","rwearzred.jpg","rwearzwhite.jpg"]' data-name="Righteous Wearz Tee" data-price="35">
+  <img src="rwearzblack.jpg" class="product-main">
   <h3>Righteous Wearz Tee</h3>
   <p class="price">$35</p>
-  <select class="product-size">
-    <option value="M">M (1)</option>
-    <option value="L">L (1)</option>
-    <option value="2XL">2XL (2)</option>
-    <option value="3XL">3XL (1)</option>
+  <select class="color-select">
+    <option value="0">Black</option>
+    <option value="1">Skyblue</option>
+    <option value="2">Red</option>
+    <option value="3">White</option>
   </select>
-  <select class="payment-method">
-    <option value="paypal">PayPal</option>
-    <option value="cashapp">Cash App</option>
-    <option value="venmo">Venmo</option>
-    <option value="applepay">Apple Pay</option>
+  <select class="size-select">
+    <option>M (1)</option>
+    <option>L (1)</option>
+    <option>2XL (2)</option>
+    <option>3XL (1)</option>
   </select>
-  <button class="buy-now" data-product="Righteous Wearz Tee" data-price="35">Buy Now</button>
+  <button class="buy-now">Buy Now</button>
 </div>
 
-<!-- Logo Tee -->
-<div class="product-card">
-  <div class="slideshow-container" data-images='["logoblack.jpg","logoblue.jpg","logoorange.jpg"]'>
-    <img src="logoblack.jpg" class="product-slide" style="opacity:1;">
-    <button class="prev-slide">&#10094;</button>
-    <button class="next-slide">&#10095;</button>
-  </div>
+<div class="product-card" data-images='["logoblack.jpg","logoblue.jpg","logoorange.jpg"]' data-name="Logo Tee" data-price="20">
+  <img src="logoblack.jpg" class="product-main">
   <h3>Logo Tee</h3>
   <p class="price">$20</p>
-  <select class="product-size">
-    <option value="S">S (2)</option>
-    <option value="M">M (1)</option>
-    <option value="L">L (2)</option>
+  <select class="color-select">
+    <option value="0">Black</option>
+    <option value="1">Blue</option>
+    <option value="2">Orange</option>
   </select>
-  <select class="payment-method">
-    <option value="paypal">PayPal</option>
-    <option value="cashapp">Cash App</option>
-    <option value="venmo">Venmo</option>
-    <option value="applepay">Apple Pay</option>
+  <select class="size-select">
+    <option>S (2)</option>
+    <option>M (1)</option>
+    <option>L (2)</option>
   </select>
-  <button class="buy-now" data-product="Logo Tee" data-price="20">Buy Now</button>
+  <button class="buy-now">Buy Now</button>
 </div>
 
-<!-- Crewneck -->
-<div class="product-card">
-  <div class="slideshow-container" data-images='["crewneckblack.jpg","crewneckred.jpg","crewneckpurple.jpg","crewneckyellow.jpg"]'>
-    <img src="crewneckblack.jpg" class="product-slide" style="opacity:1;">
-    <button class="prev-slide">&#10094;</button>
-    <button class="next-slide">&#10095;</button>
-  </div>
+<div class="product-card" data-images='["crewneckblack.jpg","crewneckred.jpg","crewneckpurple.jpg","crewneckyellow.jpg"]' data-name="Crewneck" data-price="25">
+  <img src="crewneckblack.jpg" class="product-main">
   <h3>Crewneck</h3>
   <p class="price">$25</p>
-  <select class="product-size">
-    <option value="M">M</option>
-    <option value="L">L</option>
-    <option value="XL">XL</option>
+  <select class="color-select">
+    <option value="0">Black</option>
+    <option value="1">Red</option>
+    <option value="2">Purple</option>
+    <option value="3">Yellow</option>
   </select>
-  <select class="payment-method">
-    <option value="paypal">PayPal</option>
-    <option value="cashapp">Cash App</option>
-    <option value="venmo">Venmo</option>
-    <option value="applepay">Apple Pay</option>
+  <select class="size-select">
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
   </select>
-  <button class="buy-now" data-product="Crewneck" data-price="25">Buy Now</button>
+  <button class="buy-now">Buy Now</button>
 </div>
 
-<!-- Saved Long Sleeve -->
-<div class="product-card">
-  <div class="slideshow-container" data-images='["savedblue.jpg","savedred.jpg"]'>
-    <img src="savedblue.jpg" class="product-slide" style="opacity:1;">
-    <button class="prev-slide">&#10094;</button>
-    <button class="next-slide">&#10095;</button>
-  </div>
+<div class="product-card" data-images='["savedblue.jpg","savedred.jpg"]' data-name="Saved Long Sleeve" data-price="25">
+  <img src="savedblue.jpg" class="product-main">
   <h3>Saved Long Sleeve</h3>
   <p class="price">$25</p>
-  <select class="product-size">
-    <option value="L">L (2)</option>
-    <option value="XL">XL (5)</option>
+  <select class="color-select">
+    <option value="0">Blue</option>
+    <option value="1">Red</option>
   </select>
-  <select class="payment-method">
-    <option value="paypal">PayPal</option>
-    <option value="cashapp">Cash App</option>
-    <option value="venmo">Venmo</option>
-    <option value="applepay">Apple Pay</option>
+  <select class="size-select">
+    <option>L (2)</option>
+    <option>XL (5)</option>
   </select>
-  <button class="buy-now" data-product="Saved Long Sleeve" data-price="25">Buy Now</button>
+  <button class="buy-now">Buy Now</button>
 </div>
 
-<!-- Hoodie -->
-<div class="product-card">
-  <div class="slideshow-container" data-images='["hoodie.jpg"]'>
-    <img src="hoodie.jpg" class="product-slide" style="opacity:1;">
-  </div>
+<div class="product-card" data-images='["hoodie.jpg"]' data-name="Hoodie" data-price="40">
+  <img src="hoodie.jpg" class="product-main">
   <h3>Hoodie</h3>
   <p class="price">$40</p>
-  <select class="product-size">
-    <option value="M">M</option>
-    <option value="L">L</option>
-    <option value="XL">XL</option>
-    <option value="2XL">2XL</option>
+  <select class="size-select">
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+    <option>2XL</option>
   </select>
-  <select class="payment-method">
-    <option value="paypal">PayPal</option>
-    <option value="cashapp">Cash App</option>
-    <option value="venmo">Venmo</option>
-    <option value="applepay">Apple Pay</option>
-  </select>
-  <button class="buy-now" data-product="Hoodie" data-price="40">Buy Now</button>
+  <button class="buy-now">Buy Now</button>
 </div>
 
-<!-- Beanie -->
-<div class="product-card">
-  <div class="slideshow-container" data-images='["beanie.jpg"]'>
-    <img src="beanie.jpg" class="product-slide" style="opacity:1;">
-  </div>
+<div class="product-card" data-images='["beanie.jpg"]' data-name="Beanie" data-price="25">
+  <img src="beanie.jpg" class="product-main">
   <h3>Beanie</h3>
   <p class="price">$25</p>
-  <p>One Size Fits All</p>
-  <select class="payment-method">
-    <option value="paypal">PayPal</option>
-    <option value="cashapp">Cash App</option>
-    <option value="venmo">Venmo</option>
-    <option value="applepay">Apple Pay</option>
-  </select>
-  <button class="buy-now" data-product="Beanie" data-price="25">Buy Now</button>
+  <button class="buy-now">Buy Now</button>
 </div>
 
-</div>
+  </div>
 </section>
 
 <!-- GALLERY -->
@@ -327,7 +275,6 @@ Clarens Wiz McCormick was born in the poorest city in the streets of Haiti. Grow
 <section id="payments" style="background:#eaf3ff; padding:3rem 1rem;">
   <h2>Support & Payment Options</h2>
   <p>Send payments or donations below:</p>
-
   <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
     <a href="https://cash.app/$WizmcCormick" target="_blank" style="background:#00C244; color:white; padding:15px 25px; border-radius:8px; text-decoration:none;">💵 Cash App</a>
     <a href="https://venmo.com/u/Wiz-McCormick" target="_blank" style="background:#3b82f6; color:white; padding:15px 25px; border-radius:8px; text-decoration:none;">📱 Venmo</a>
@@ -351,10 +298,46 @@ backToTop.addEventListener('click', e => {
   window.scrollTo({top:0, behavior:'smooth'});
 });
 
-// Slideshow and Buy Now functionality
-document.querySelectorAll('.slideshow-container').forEach(container => {
-  const images = JSON.parse(container.dataset.images);
-  const img = container.querySelector('.product-slide');
-  let index = 0;
+// Product Slideshow and Buy Now
+document.querySelectorAll('.product-card').forEach(card => {
+  const images = card.dataset.images ? JSON.parse(card.dataset.images) : null;
+  const mainImg = card.querySelector('.product-main');
+  const colorSelect = card.querySelector('.color-select');
+  
+  // Change image on color selection
+  if (images && colorSelect) {
+    colorSelect.addEventListener('change', () => {
+      const index = parseInt(colorSelect.value);
+      mainImg.src = images[index];
+    });
+  }
 
-  // Auto slideshow every 3s
+  // Auto slideshow for products with multiple images
+  if (images && images.length > 1) {
+    let idx = 0;
+    setInterval(() => {
+      idx = (idx + 1) % images.length;
+      mainImg.src = images[idx];
+      if (colorSelect) colorSelect.value = idx;
+    }, 3000); // Change image every 3 seconds
+  }
+
+  // Buy Now Button
+  const buyBtn = card.querySelector('.buy-now');
+  if (buyBtn) {
+    buyBtn.addEventListener('click', () => {
+      const productName = card.dataset.name;
+      const productPrice = card.dataset.price;
+      const size = card.querySelector('.size-select') ? card.querySelector('.size-select').value : '';
+      const color = card.querySelector('.color-select') ? card.querySelector('.color-select option:selected').text : '';
+      
+      // Open PayPal link (example)
+      const paypalURL = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=thewiz00%40gmail.com&item_name=${encodeURIComponent(productName + ' - ' + color + ' - ' + size)}&amount=${productPrice}&currency_code=USD`;
+      window.open(paypalURL, '_blank');
+    });
+  }
+});
+</script>
+
+</body>
+</html>
