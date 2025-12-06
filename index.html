@@ -69,7 +69,7 @@ section h2 {margin-bottom:1rem;}
 }
 
 /* Founder Page */
-#founder {background:#fff; padding:3rem 1rem;}
+#founder {background:#fff; padding:3rem 1rem; position:relative;}
 .founder-container {
     max-width: 900px;
     margin: auto;
@@ -83,6 +83,21 @@ section h2 {margin-bottom:1rem;}
 .founder-container img {width:260px; height:260px; object-fit:cover; border-radius:50%; box-shadow:0 0 10px rgba(0,0,0,0.3); margin-bottom:20px;}
 .founder-container .bio {font-size:18px; line-height:1.6; white-space:pre-line;}
 
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    background:#3b82f6;
+    color:white;
+    padding:12px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    z-index:1000;
+}
+#back-to-top:hover {background:#2563eb;}
 footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
 </style>
 </head>
@@ -106,7 +121,7 @@ footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
 
 <section id="about">
   <h2>About Us</h2>
-  <p>Righteous Wearz is a prophetic covering for the righteous remnant — a brand that recognizes God’s people above all others.</p>
+  <p>Righteous wearz is a prophetic covering for the righteous remnant. The brand speaks for itself. When you wear righteous wearz we want people to know immediately where you stand. That you love God, desire to live godly, that you desire peace with others and that you’re not here to cause trouble. No matter what tribe, nation or tongues you’re from people wont judge u based off outward appearances but that in the inside you are a righteous person.</p>
 </section>
 
 <section id="mission">
@@ -232,6 +247,7 @@ footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
     <div class="bio">
 Clarens Wiz McCormick was born in the poorest city in the streets of Haiti. Growing up seeing the poverty around him. He knew he wanted to help those who are poor. When he got adopted to U.S at the age of 7 he was shocked to see poor people suffering in America too. His faith in Jesus convicted him to start Righteous wearz in hopes of making money to make a difference for the poor and in his community. Wiz knows in the kingdom of God, the greatest of us is the one that is least and poor. So to stay kingdom minded he desires to plead the cause of the poor and needy. providing clothes and food for the least of us in the kingdom, knowing that they are really the greatest in the kingdom of God.
     </div>
+    <a href="#" id="back-to-top">Back to Top</a>
   </div>
 </section>
 
@@ -254,6 +270,20 @@ Clarens Wiz McCormick was born in the poorest city in the streets of Haiti. Grow
 
 <script>
 // Product script (unchanged)
+
+// Back to Top Button
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTop.style.display = 'inline-block';
+  } else {
+    backToTop.style.display = 'none';
+  }
+});
+backToTop.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({top:0, behavior:'smooth'});
+});
 </script>
 
 </body>
