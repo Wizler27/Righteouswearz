@@ -29,7 +29,8 @@ section h2 {margin-bottom:1rem;}
 .product-card {background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); width:260px; padding:15px; text-align:center; position:relative; overflow:hidden;}
 .product-card img {width:100%; height:auto; max-height:250px; object-fit:contain; border-radius:8px; margin-bottom:10px;}
 .product-card select {padding:5px; margin-bottom:10px; width:100%;}
-.product-card form {margin-top:10px;}
+.product-card .buy-link {display:inline-block; padding:10px 20px; background:#3b82f6; color:white; text-decoration:none; border-radius:8px; margin-top:10px;}
+.product-card .buy-link:hover {background:#2563eb;}
 
 /* Gallery Section */
 #gallery {padding:2rem 1rem 4rem;}
@@ -40,64 +41,19 @@ section h2 {margin-bottom:1rem;}
   max-width: 1200px;
   margin: 0 auto;
 }
-
-.gallery-item {
-  background:white;
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-.gallery-item:hover {
-  transform:translateY(-6px);
-  box-shadow:0 6px 18px rgba(0,0,0,0.15);
-}
-
-.gallery-item img {
-  width:100%;
-  max-height:350px;
-  object-fit:contain;
-  background:#f4f4f4;
-  border-bottom:2px solid #eee;
-}
-
-.caption {
-  padding:15px;
-  color:#333;
-  font-size:0.95rem;
-  font-style:italic;
-  line-height:1.5;
-}
+.gallery-item {background:white; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+.gallery-item img {width:100%; max-height:350px; object-fit:contain; background:#f4f4f4; border-bottom:2px solid #eee;}
+.caption {padding:15px; color:#333; font-size:0.95rem; font-style:italic; line-height:1.5;}
 
 /* Founder Page */
 #founder {background:#fff; padding:3rem 1rem; position:relative;}
-.founder-container {
-    max-width: 900px;
-    margin: auto;
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    text-align: center;
-}
-.founder-container h2 {margin-bottom: 30px; font-size:32px; letter-spacing:1px;}
+.founder-container {max-width: 900px; margin:auto; background:white; padding:40px; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.1); text-align:center;}
+.founder-container h2 {margin-bottom:30px; font-size:32px; letter-spacing:1px;}
 .founder-container img {width:260px; height:260px; object-fit:cover; border-radius:50%; box-shadow:0 0 10px rgba(0,0,0,0.3); margin-bottom:20px;}
 .founder-container .bio {font-size:18px; line-height:1.6; white-space:pre-line;}
 
 /* Back to Top Button */
-#back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    display: none;
-    background:#3b82f6;
-    color:white;
-    padding:12px 18px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-    z-index:1000;
-}
+#back-to-top {position: fixed; bottom:25px; right:25px; display:none; background:#3b82f6; color:white; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:bold; z-index:1000;}
 #back-to-top:hover {background:#2563eb;}
 footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
 </style>
@@ -136,190 +92,100 @@ footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
   <div class="product-grid">
 
 <!-- Righteous Wearz Tee -->
-<div class="product-card" data-images='["rwearzblack.jpg","rweazblue.jpg","rwearzred.jpg","rwearzwhite.jpg"]' data-name="Righteous Wearz Tee" data-price="35">
+<div class="product-card" data-images='{"Black":"rwearzblack.jpg","Sky Blue":"rweazblue.jpg","Red":"rwearzred.jpg","White":"rwearzwhite.jpg"}'>
   <img src="rwearzblack.jpg" class="product-main">
   <h3>Righteous Wearz Tee</h3>
   <p class="price">$35</p>
   <select class="color-select">
-    <option value="0">Black</option>
-    <option value="1">Sky Blue</option>
-    <option value="2">Red</option>
-    <option value="3">White</option>
+    <option>Black</option>
+    <option>Sky Blue</option>
+    <option>Red</option>
+    <option>White</option>
   </select>
-  <select class="size-select" name="os0">
-    <option value="M">M</option>
-    <option value="L">L</option>
-    <option value="2XL">2XL</option>
-    <option value="3XL">3XL</option>
+  <select class="size-select">
+    <option>M</option>
+    <option>L</option>
+    <option>2XL</option>
+    <option>3XL</option>
   </select>
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="business" value="thewiz00@gmail.com">
-    <input type="hidden" name="item_name" class="item-name" value="Righteous Wearz Tee">
-    <input type="hidden" name="amount" value="35">
-    <input type="hidden" name="currency_code" value="USD">
-    <input type="hidden" name="on0" value="Size">
-    <input type="hidden" name="os0" class="selected-size" value="">
-    <input type="hidden" name="on1" value="Color">
-    <input type="hidden" name="os1" class="selected-color" value="">
-    <input type="submit" value="Buy Now">
-  </form>
+  <a href="#" class="buy-link">Link Me</a>
 </div>
 
 <!-- Logo Tee -->
-<div class="product-card" data-images='["logoblack.jpg","logoblue.jpg","logoorange.jpg"]' data-name="Logo Tee" data-price="20">
+<div class="product-card" data-images='{"Black":"logoblack.jpg","Blue":"logoblue.jpg","Orange":"logoorange.jpg"}'>
   <img src="logoblack.jpg" class="product-main">
   <h3>Logo Tee</h3>
   <p class="price">$20</p>
   <select class="color-select">
-    <option value="0">Black</option>
-    <option value="1">Blue</option>
-    <option value="2">Orange</option>
+    <option>Black</option>
+    <option>Blue</option>
+    <option>Orange</option>
   </select>
-  <select class="size-select" name="os0">
-    <option value="S">S</option>
-    <option value="M">M</option>
-    <option value="L">L</option>
+  <select class="size-select">
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
   </select>
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="business" value="thewiz00@gmail.com">
-    <input type="hidden" name="item_name" class="item-name" value="Logo Tee">
-    <input type="hidden" name="amount" value="20">
-    <input type="hidden" name="currency_code" value="USD">
-    <input type="hidden" name="on0" value="Size">
-    <input type="hidden" name="os0" class="selected-size" value="">
-    <input type="hidden" name="on1" value="Color">
-    <input type="hidden" name="os1" class="selected-color" value="">
-    <input type="submit" value="Buy Now">
-  </form>
+  <a href="#" class="buy-link">Link Me</a>
 </div>
 
 <!-- Crewneck -->
-<div class="product-card" data-images='["crewneckblack.jpg","crewneckred.jpg","crewneckpurp.jpg","crewneckyellow.jpg"]' data-name="Crewneck" data-price="25">
+<div class="product-card" data-images='{"Black":"crewneckblack.jpg","Red":"crewneckred.jpg","Purple":"crewneckpurp.jpg","Yellow":"crewneckyellow.jpg"}'>
   <img src="crewneckblack.jpg" class="product-main">
   <h3>Crewneck</h3>
   <p class="price">$25</p>
   <select class="color-select">
-    <option value="0">Black</option>
-    <option value="1">Red</option>
-    <option value="2">Purple</option>
-    <option value="3">Yellow</option>
+    <option>Black</option>
+    <option>Red</option>
+    <option>Purple</option>
+    <option>Yellow</option>
   </select>
-  <select class="size-select" name="os0">
-    <option value="M">M</option>
-    <option value="L">L</option>
-    <option value="XL">XL</option>
+  <select class="size-select">
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
   </select>
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="business" value="thewiz00@gmail.com">
-    <input type="hidden" name="item_name" class="item-name" value="Crewneck">
-    <input type="hidden" name="amount" value="25">
-    <input type="hidden" name="currency_code" value="USD">
-    <input type="hidden" name="on0" value="Size">
-    <input type="hidden" name="os0" class="selected-size" value="">
-    <input type="hidden" name="on1" value="Color">
-    <input type="hidden" name="os1" class="selected-color" value="">
-    <input type="submit" value="Buy Now">
-  </form>
+  <a href="#" class="buy-link">Link Me</a>
 </div>
 
 <!-- Saved Long Sleeve -->
-<div class="product-card" data-images='["savedblue.jpg","savedred.jpg"]' data-name="Saved Long Sleeve" data-price="25">
+<div class="product-card" data-images='{"Blue":"savedblue.jpg","Red":"savedred.jpg"}'>
   <img src="savedblue.jpg" class="product-main">
   <h3>Saved Long Sleeve</h3>
   <p class="price">$25</p>
   <select class="color-select">
-    <option value="0">Blue</option>
-    <option value="1">Red</option>
+    <option>Blue</option>
+    <option>Red</option>
   </select>
-  <select class="size-select" name="os0">
-    <option value="L">L</option>
-    <option value="XL">XL</option>
+  <select class="size-select">
+    <option>L</option>
+    <option>XL</option>
   </select>
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="business" value="thewiz00@gmail.com">
-    <input type="hidden" name="item_name" class="item-name" value="Saved Long Sleeve">
-    <input type="hidden" name="amount" value="25">
-    <input type="hidden" name="currency_code" value="USD">
-    <input type="hidden" name="on0" value="Size">
-    <input type="hidden" name="os0" class="selected-size" value="">
-    <input type="hidden" name="on1" value="Color">
-    <input type="hidden" name="os1" class="selected-color" value="">
-    <input type="submit" value="Buy Now">
-  </form>
+  <a href="#" class="buy-link">Link Me</a>
 </div>
 
 <!-- Hoodie -->
-<div class="product-card" data-images='["hoodie.jpg"]' data-name="Hoodie" data-price="40">
+<div class="product-card" data-images='{"Default":"hoodie.jpg"}'>
   <img src="hoodie.jpg" class="product-main">
   <h3>Hoodie</h3>
   <p class="price">$40</p>
-  <select class="size-select" name="os0">
-    <option value="M">M</option>
-    <option value="L">L</option>
-    <option value="XL">XL</option>
-    <option value="2XL">2XL</option>
+  <select class="size-select">
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+    <option>2XL</option>
   </select>
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="business" value="thewiz00@gmail.com">
-    <input type="hidden" name="item_name" class="item-name" value="Hoodie">
-    <input type="hidden" name="amount" value="40">
-    <input type="hidden" name="currency_code" value="USD">
-    <input type="hidden" name="on0" value="Size">
-    <input type="hidden" name="os0" class="selected-size" value="">
-    <input type="submit" value="Buy Now">
-  </form>
+  <a href="#" class="buy-link">Link Me</a>
 </div>
 
 <!-- Beanie -->
-<div class="product-card" data-images='["beanie.jpg"]' data-name="Beanie" data-price="25">
+<div class="product-card" data-images='{"Default":"beanie.jpg"}'>
   <img src="beanie.jpg" class="product-main">
   <h3>Beanie</h3>
   <p class="price">$25</p>
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="business" value="thewiz00@gmail.com">
-    <input type="hidden" name="item_name" class="item-name" value="Beanie">
-    <input type="hidden" name="amount" value="25">
-    <input type="hidden" name="currency_code" value="USD">
-    <input type="submit" value="Buy Now">
-  </form>
+  <a href="#" class="buy-link">Link Me</a>
 </div>
 
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery-grid">
-    <div class="gallery-item"><img src="erick.jpg"></div>
-    <div class="gallery-item"><img src="willie.jpg"></div>
-    <div class="gallery-item"><img src="sonnyback.jpg"></div>
-    <div class="gallery-item">
-      <img src="jacob.jpg">
-      <p class="caption">“You are in the light side. There is a battle between light and darkness, and you have chosen to join the light force. Be you and let your light shine.”</p>
-    </div>
-    <div class="gallery-item"><img src="joey.jpg"></div>
-    <div class="gallery-item">
-      <img src="wiz.jpg">
-      <p class="caption">“Blessed are the peacemakers. When you wear Righteous, you represent peace — a man that seeks peace with God and with others.”</p>
-    </div>
-    <div class="gallery-item"><img src="hat.jpg"></div>
-    <div class="gallery-item"><img src="flynn.jpg"></div>
-    <div class="gallery-item">
-      <img src="dickens.jpg">
-      <p class="caption">“You’re clothed with power. You’re carrying your cross to strive with strength to live the godly way.”</p>
-    </div>
-    <div class="gallery-item"><img src="dickenssave.jpg"></div>
-    <div class="gallery-item">
-      <img src="gym.jpg">
-      <p class="caption">“This brand is different… Though they may look different, they embody the temple of a godly man.”</p>
-    </div>
   </div>
 </section>
 
@@ -335,8 +201,33 @@ Clarens Wiz McCormick was born in the poorest city in the streets of Haiti. Grow
   </div>
 </section>
 
-<!-- PAYMENTS -->
-<section id="payments" style="background:#eaf3ff; padding:3rem 1rem;">
-  <h2>Support & Payment Options</h2>
-  <p>Send payments or donations below:</p>
-  <div style="display:flex; flex-wrap:wrap; justify-content:center;
+<footer id="contact">
+  <p>&copy; 2025 Righteous Wearz | All Rights Reserved</p>
+</footer>
+
+<script>
+// Change image on color select
+document.querySelectorAll('.product-card').forEach(card => {
+    const images = JSON.parse(card.getAttribute('data-images'));
+    const mainImg = card.querySelector('.product-main');
+    const colorSelect = card.querySelector('.color-select');
+
+    colorSelect.addEventListener('change', () => {
+        const selectedColor = colorSelect.value;
+        if(images[selectedColor]) mainImg.src = images[selectedColor];
+    });
+});
+
+// Back to Top Button
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  backToTop.style.display = window.scrollY > 300 ? 'inline-block' : 'none';
+});
+backToTop.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+</script>
+
+</body>
+</html>
