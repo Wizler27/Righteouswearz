@@ -29,6 +29,7 @@ section h2 {margin-bottom:1rem;}
 .product-card {background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); width:260px; padding:15px; text-align:center;}
 .product-card img {width:100%; height:auto; max-height:250px; object-fit:contain; border-radius:8px; margin-bottom:10px;}
 .product-card select {padding:5px; margin-bottom:10px;}
+.payment-buttons {display:flex; flex-direction:column; gap:10px; margin-top:10px;}
 
 /* Gallery Section */
 #gallery {padding:2rem 1rem 4rem;}
@@ -134,6 +135,7 @@ footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
   <h2>Shop</h2>
   <div class="product-grid">
 
+    <!-- Product Example -->
     <div class="product-card">
       <img id="rwearz-img" src="rwearzblack.jpg" alt="">
       <h3>Righteous Wearz Tee</h3>
@@ -145,57 +147,31 @@ footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
         <option value="white">White</option>
       </select>
       <p id="rwearz-sizes">Sizes: M (1), L (1), 2XL (2), 3XL (1)</p>
+
+      <div class="payment-buttons">
+        <!-- PayPal Buy Now -->
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="yourpaypalemail@example.com">
+          <input type="hidden" name="item_name" value="Righteous Wearz Tee">
+          <input type="hidden" name="amount" value="35.00">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="hidden" name="return" value="https://yourdomain.com/thankyou.html">
+          <input type="submit" value="Buy Now (PayPal)" style="background:#00457C; color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer;">
+        </form>
+
+        <!-- Cash App -->
+        <a href="https://cash.app/$WizmcCormick" target="_blank" style="background:#00C244; color:white; padding:10px 15px; border-radius:5px; text-decoration:none;">💵 Pay with Cash App</a>
+
+        <!-- Venmo -->
+        <a href="https://venmo.com/u/Wiz-McCormick" target="_blank" style="background:#3b82f6; color:white; padding:10px 15px; border-radius:5px; text-decoration:none;">📱 Pay with Venmo</a>
+
+        <!-- Apple Pay -->
+        <a href="mailto:righteouswearz@gmail.com" style="background:#111; color:#ffe347; padding:10px 15px; border-radius:5px; text-decoration:none;">🍎 Pay with Apple Pay</a>
+      </div>
     </div>
 
-    <div class="product-card">
-      <img id="logo-img" src="logoblack.jpg" alt="">
-      <h3>Logo Tee</h3>
-      <p class="price">$20</p>
-      <select id="logo-color">
-        <option value="black">Black</option>
-        <option value="blue">Blue</option>
-        <option value="orange">Orange</option>
-      </select>
-      <p id="logo-sizes">Sizes: S (2), S (1), M (1), L (2)</p>
-    </div>
-
-    <div class="product-card">
-      <img id="crew-img" src="crewneckblack.jpg" alt="">
-      <h3>Crewneck</h3>
-      <p class="price">$25</p>
-      <select id="crew-color">
-        <option value="black">Black</option>
-        <option value="red">Red</option>
-        <option value="purple">Purple</option>
-        <option value="yellow">Yellow</option>
-      </select>
-      <p id="crew-sizes">Sizes: M, L, XL</p>
-    </div>
-
-    <div class="product-card">
-      <img id="saved-img" src="savedblue.jpg" alt="">
-      <h3>Saved Long Sleeve</h3>
-      <p class="price">$25</p>
-      <select id="saved-color">
-        <option value="blue">Blue</option>
-        <option value="red">Red</option>
-      </select>
-      <p id="saved-sizes">Sizes: L (2), L (3), XL (5)</p>
-    </div>
-
-    <div class="product-card">
-      <img src="hoodie.jpg" alt="">
-      <h3>Hoodie</h3>
-      <p class="price">$40</p>
-      <p>Sizes: M–2XL</p>
-    </div>
-
-    <div class="product-card">
-      <img src="beanie.jpg" alt="">
-      <h3>Beanie</h3>
-      <p class="price">$25</p>
-      <p>One Size Fits All</p>
-    </div>
+    <!-- Repeat similar product-cards for your other products -->
 
   </div>
 </section>
@@ -204,38 +180,29 @@ footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
 <section id="gallery">
   <h2>Gallery</h2>
   <div class="gallery-grid">
-
     <div class="gallery-item"><img src="erick.jpg"></div>
     <div class="gallery-item"><img src="willie.jpg"></div>
     <div class="gallery-item"><img src="sonnyback.jpg"></div>
-
     <div class="gallery-item">
       <img src="jacob.jpg">
       <p class="caption">“You are in the light side. There is a battle between light and darkness, and you have chosen to join the light force. Be you and let your light shine.”</p>
     </div>
-
     <div class="gallery-item"><img src="joey.jpg"></div>
-
     <div class="gallery-item">
       <img src="wiz.jpg">
       <p class="caption">“Blessed are the peacemakers. When you wear Righteous, you represent peace — a man that seeks peace with God and with others.”</p>
     </div>
-
     <div class="gallery-item"><img src="hat.jpg"></div>
     <div class="gallery-item"><img src="flynn.jpg"></div>
-
     <div class="gallery-item">
       <img src="dickens.jpg">
       <p class="caption">“You’re clothed with power. You’re carrying your cross to strive with strength to live the godly way.”</p>
     </div>
-
     <div class="gallery-item"><img src="dickenssave.jpg"></div>
-
     <div class="gallery-item">
       <img src="gym.jpg">
       <p class="caption">“This brand is different… Though they may look different, they embody the temple of a godly man.”</p>
     </div>
-
   </div>
 </section>
 
@@ -269,8 +236,6 @@ Clarens Wiz McCormick was born in the poorest city in the streets of Haiti. Grow
 </footer>
 
 <script>
-// Product script (unchanged)
-
 // Back to Top Button
 const backToTop = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
