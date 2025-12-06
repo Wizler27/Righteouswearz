@@ -29,7 +29,8 @@ section h2 {margin-bottom:1rem;}
 .product-card {background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); width:260px; padding:15px; text-align:center;}
 .product-card img {width:100%; height:auto; max-height:250px; object-fit:contain; border-radius:8px; margin-bottom:10px;}
 .product-card select {padding:5px; margin-bottom:10px;}
-.payment-buttons {display:flex; flex-direction:column; gap:10px; margin-top:10px;}
+.product-card button {background:#3b82f6; color:white; border:none; padding:10px 20px; border-radius:6px; font-weight:bold; cursor:pointer;}
+.product-card button:hover {background:#2563eb;}
 
 /* Gallery Section */
 #gallery {padding:2rem 1rem 4rem;}
@@ -135,9 +136,9 @@ footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
   <h2>Shop</h2>
   <div class="product-grid">
 
-    <!-- Product Example -->
+    <!-- Product 1 -->
     <div class="product-card">
-      <img id="rwearz-img" src="rwearzblack.jpg" alt="">
+      <img src="rwearzblack.jpg" alt="Righteous Wearz Tee">
       <h3>Righteous Wearz Tee</h3>
       <p class="price">$35</p>
       <select id="rwearz-color">
@@ -146,32 +147,105 @@ footer {background:#111; color:white; padding:1rem; margin-top:2rem;}
         <option value="red">Red</option>
         <option value="white">White</option>
       </select>
-      <p id="rwearz-sizes">Sizes: M (1), L (1), 2XL (2), 3XL (1)</p>
-
-      <div class="payment-buttons">
-        <!-- PayPal Buy Now -->
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="cmd" value="_xclick">
-          <input type="hidden" name="business" value="yourpaypalemail@example.com">
-          <input type="hidden" name="item_name" value="Righteous Wearz Tee">
-          <input type="hidden" name="amount" value="35.00">
-          <input type="hidden" name="currency_code" value="USD">
-          <input type="hidden" name="return" value="https://yourdomain.com/thankyou.html">
-          <input type="submit" value="Buy Now (PayPal)" style="background:#00457C; color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer;">
-        </form>
-
-        <!-- Cash App -->
-        <a href="https://cash.app/$WizmcCormick" target="_blank" style="background:#00C244; color:white; padding:10px 15px; border-radius:5px; text-decoration:none;">💵 Pay with Cash App</a>
-
-        <!-- Venmo -->
-        <a href="https://venmo.com/u/Wiz-McCormick" target="_blank" style="background:#3b82f6; color:white; padding:10px 15px; border-radius:5px; text-decoration:none;">📱 Pay with Venmo</a>
-
-        <!-- Apple Pay -->
-        <a href="mailto:righteouswearz@gmail.com" style="background:#111; color:#ffe347; padding:10px 15px; border-radius:5px; text-decoration:none;">🍎 Pay with Apple Pay</a>
-      </div>
+      <p>Sizes: M (1), L (1), 2XL (2), 3XL (1)</p>
+      <select class="payment-method">
+        <option value="paypal">PayPal</option>
+        <option value="cashapp">Cash App</option>
+        <option value="venmo">Venmo</option>
+        <option value="applepay">Apple Pay</option>
+      </select>
+      <button class="buy-now" data-product="Righteous Wearz Tee" data-price="35">Buy Now</button>
     </div>
 
-    <!-- Repeat similar product-cards for your other products -->
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="logoblack.jpg" alt="Logo Tee">
+      <h3>Logo Tee</h3>
+      <p class="price">$20</p>
+      <select id="logo-color">
+        <option value="black">Black</option>
+        <option value="blue">Blue</option>
+        <option value="orange">Orange</option>
+      </select>
+      <p>Sizes: S (2), M (1), L (2)</p>
+      <select class="payment-method">
+        <option value="paypal">PayPal</option>
+        <option value="cashapp">Cash App</option>
+        <option value="venmo">Venmo</option>
+        <option value="applepay">Apple Pay</option>
+      </select>
+      <button class="buy-now" data-product="Logo Tee" data-price="20">Buy Now</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="crewneckblack.jpg" alt="Crewneck">
+      <h3>Crewneck</h3>
+      <p class="price">$25</p>
+      <select id="crew-color">
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="purple">Purple</option>
+        <option value="yellow">Yellow</option>
+      </select>
+      <p>Sizes: M, L, XL</p>
+      <select class="payment-method">
+        <option value="paypal">PayPal</option>
+        <option value="cashapp">Cash App</option>
+        <option value="venmo">Venmo</option>
+        <option value="applepay">Apple Pay</option>
+      </select>
+      <button class="buy-now" data-product="Crewneck" data-price="25">Buy Now</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+      <img src="savedblue.jpg" alt="Saved Long Sleeve">
+      <h3>Saved Long Sleeve</h3>
+      <p class="price">$25</p>
+      <select id="saved-color">
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+      </select>
+      <p>Sizes: L (2), XL (5)</p>
+      <select class="payment-method">
+        <option value="paypal">PayPal</option>
+        <option value="cashapp">Cash App</option>
+        <option value="venmo">Venmo</option>
+        <option value="applepay">Apple Pay</option>
+      </select>
+      <button class="buy-now" data-product="Saved Long Sleeve" data-price="25">Buy Now</button>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card">
+      <img src="hoodie.jpg" alt="Hoodie">
+      <h3>Hoodie</h3>
+      <p class="price">$40</p>
+      <p>Sizes: M–2XL</p>
+      <select class="payment-method">
+        <option value="paypal">PayPal</option>
+        <option value="cashapp">Cash App</option>
+        <option value="venmo">Venmo</option>
+        <option value="applepay">Apple Pay</option>
+      </select>
+      <button class="buy-now" data-product="Hoodie" data-price="40">Buy Now</button>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card">
+      <img src="beanie.jpg" alt="Beanie">
+      <h3>Beanie</h3>
+      <p class="price">$25</p>
+      <p>One Size Fits All</p>
+      <select class="payment-method">
+        <option value="paypal">PayPal</option>
+        <option value="cashapp">Cash App</option>
+        <option value="venmo">Venmo</option>
+        <option value="applepay">Apple Pay</option>
+      </select>
+      <button class="buy-now" data-product="Beanie" data-price="25">Buy Now</button>
+    </div>
 
   </div>
 </section>
@@ -239,15 +313,35 @@ Clarens Wiz McCormick was born in the poorest city in the streets of Haiti. Grow
 // Back to Top Button
 const backToTop = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTop.style.display = 'inline-block';
-  } else {
-    backToTop.style.display = 'none';
-  }
+  backToTop.style.display = window.scrollY > 300 ? 'inline-block' : 'none';
 });
 backToTop.addEventListener('click', (e) => {
   e.preventDefault();
   window.scrollTo({top:0, behavior:'smooth'});
+});
+
+// Buy Now Buttons
+document.querySelectorAll('.buy-now').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.parentElement;
+    const product = btn.dataset.product;
+    const price = btn.dataset.price;
+    const payment = card.querySelector('.payment-method').value;
+
+    let url = '';
+
+    if(payment === 'paypal') {
+      url = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=thewiz00@gmail.com&item_name=${encodeURIComponent(product)}&amount=${price}&currency_code=USD`;
+    } else if(payment === 'cashapp') {
+      url = 'https://cash.app/$WizmcCormick';
+    } else if(payment === 'venmo') {
+      url = 'https://venmo.com/u/Wiz-McCormick';
+    } else if(payment === 'applepay') {
+      url = 'mailto:righteouswearz@gmail.com';
+    }
+
+    window.open(url, '_blank');
+  });
 });
 </script>
 
